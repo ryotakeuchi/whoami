@@ -35,7 +35,7 @@ body {
 }
 
 .whoami-master p {
-  font-size: 15px;
+  font-size: 12px;
   margin: 0;
   padding-bottom: 10px;
 }
@@ -47,49 +47,44 @@ body {
 .Projects-master {
   margin: 0;
 }
+      .projects-title {
+        position: -webkit-sticky;
+        position: sticky;
+        top: 20px;
+        background-color: white;
+        padding-bottom: 10px;
+      }
 
-.projects-title {
-  position: -webkit-sticky;
-  position: sticky;
-  top: 20px;
-  background-color: white;
-  padding-bottom: 10px;
-}
+      /* --- ここから変更・追記 --- */
+      .project-box {
+        border: none;
+        border-bottom: 1px solid #ccc;
+        padding: 15px 10px;
+        max-width: none; 
+        margin: 0;
+        /* ★ 背景色と「文字色」の両方が滑らかに変化するように追記 ★ */
+        transition: background-color 0.2s ease, color 0.2s ease;
+      }
+      .project-box:hover {
+        /* ホバー時の背景色を青に指定 */
+        background-color: #0000ff;
+        /* ★ ホバー時の文字色を白にする一行を追加 ★ */
+        color: white;
+        cursor: pointer;
+      }
 
-/* --- ここから変更・追記 --- */
-.project-box {
-  border: none;
-  border-bottom: 1px solid #ccc;
-  padding: 15px 10px;
-  max-width: none; 
-  margin: 0;
-  /* ★ 背景色と「文字色」の両方が滑らかに変化するように追記 ★ */
-  transition: background-color 0.2s ease, color 0.2s ease;
-}
-.project-box:hover {
-  /* ホバー時の背景色を青に指定 */
-  background-color: #0000ff;
-  /* ★ ホバー時の文字色を白にする一行を追加 ★ */
-  color: white;
-  cursor: pointer;
-}
+      .project-box p {
+        font-size: 12px;
+        margin: 0;
+      }
 
+      /* リンクのデフォルトスタイルをリセット */
+      .projects-title-link {
+          /* 下線をなくす */
+          text-decoration: none;
+          /* 親要素の色（黒）を継承する */
+          color: inherit;
+          /* リンクの範囲をクリックエリア全体に広げるおまじない */
+          display: block;
+      }
 
-
-
-.project-box p {
-  font-size: 15px;
-  margin: 0;
-}
-
-/* リンクのデフォルトスタイルをリセット */
-.projects-title-link {
-    /* 下線をなくす */
-    text-decoration: none;
-    /* 親要素の色（黒）を継承する */
-    color: inherit;
-    /* リンクの範囲をクリックエリア全体に広げるおまじない */
-    display: block;
-}
-
-/* --- ここまで変更・追記 --- */
