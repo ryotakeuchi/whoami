@@ -66,9 +66,22 @@ body {
   font-size: 15px;
   margin: 0;
 }
+
+/* projectsのリンクに transition を設定 */
 .projects-title-link {
-    color: inherit;
-    text-decoration: none;
+  color: inherit;
+  text-decoration: none;
+  /* 色が0.2秒かけて滑らかに変化するように設定 */
+  transition: color 0.2s ease;
 }
+
+/* projectsのリンクをホバーした時のスタイル */
+.projects-title-link:hover {
+/* ホバー時の文字色を指定（例：青色） */
+color: #0015ff;
+}
+
+
+
 /*---------------------------------------------*/
 
