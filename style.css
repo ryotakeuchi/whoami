@@ -88,3 +88,117 @@ body {
           display: block;
       }
 
+
+
+
+
+
+
+
+/* =================================================== */
+/* ===== プロジェクト詳細ページ用のスタイル ここから ===== */
+/* =================================================== */
+
+/* --- 詳細ページのメインレイアウト --- */
+.project-detail-container {
+  display: flex;
+  align-items: flex-start;
+  gap: 50px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* --- 左カラム（サイドバー） --- */
+.project-sidebar {
+  flex: 1; /* 右カラムとの幅の比率 */
+  position: -webkit-sticky;
+  position: sticky;
+  top: 20px;
+  /* サイドバーの高さを画面サイズに合わせ、スクロールのために必須 */
+  height: calc(100vh - 40px); 
+  display: flex;
+  flex-direction: column;
+}
+
+/* 「戻る」リンクのスタイル */
+.back-link {
+  display: block;
+  font-weight: bold;
+  text-decoration: none;
+  color: #333;
+  margin-bottom: 20px;
+  padding: 10px;
+  border-radius: 5px;
+  transition: background-color 0.2s ease;
+}
+.back-link:hover {
+  background-color: #f0f0f0;
+}
+
+/* サイドバー内のプロジェクトリスト */
+.project-list-menu {
+  /* この設定でリスト部分だけがスクロールするようになります */
+  overflow-y: auto;
+  flex-grow: 1;
+}
+/* スクロールバーの見た目を少し控えめにする（任意） */
+.project-list-menu::-webkit-scrollbar {
+    width: 6px;
+}
+.project-list-menu::-webkit-scrollbar-thumb {
+    background-color: #ccc;
+    border-radius: 3px;
+}
+
+/* 現在表示中のプロジェクトをハイライトするスタイル */
+.project-list-menu .project-box.active {
+    background-color: #0000ff;
+    color: white;
+}
+.project-list-menu .project-box.active:hover {
+    background-color: #0000cc; /* ホバー時に少し色を濃くする */
+}
+
+
+/* --- 右カラム（コンテンツエリア） --- */
+.project-content {
+  flex: 3; /* 左カラムとの幅の比率 */
+}
+
+/* 右カラムの画像スタイル */
+.project-main-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+/* 右カラムの見出しや文章のスタイル */
+.project-content h1,
+.project-content h2,
+.project-content h3 {
+    margin-top: 0;
+}
+.project-content p,
+.project-content ul {
+    line-height: 1.7; /* 行間を広げて読みやすくする */
+}
+
+/* 外部リンクのボタンスタイル */
+.external-link {
+    display: inline-block;
+    background-color: #333;
+    color: white;
+    padding: 10px 15px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 20px;
+    transition: background-color 0.2s ease;
+}
+.external-link:hover {
+    background-color: #555;
+}
+
+/* =================================================== */
+/* ===== プロジェクト詳細ページ用のスタイル ここまで ===== */
+/* =================================================== */
