@@ -25,7 +25,7 @@
 
 .project-box {
   border: 1px solid #000000; /* 枠線（1px・実線・薄い灰色） */
-  padding: 2px;          /* ボックスの内側の余白 */
+  padding: 0px;          /* ボックスの内側の余白 */
   margin-bottom: 0px;    /* 各ボックスの下側の間隔 */
   }
 
