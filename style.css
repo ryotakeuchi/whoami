@@ -1,14 +1,16 @@
 body {
     font-family: sans-serif;
-    background: #f6fafd;
-    margin: 40px;
+    background: #ffffff;
+    margin: 20px;
   }
   
-  button {
-    padding: 10px 20px;
-    font-size: 1em;
+  .whoami-title {
+    font-size: 30px;
+    font-weight: bold;
+    color: #000000;
   }
-  
+
+
   .projects-title-link {
     color: inherit;
     text-decoration: none;
