@@ -4,26 +4,27 @@ body {
 
 
 .whoami-title,.projects-title {
-font-size: 2rem;
+font-size: 30px;
 font-weight: bold;
 color: #000000;
 }
 
+
+
+
+
 .project-box {
 border: none;
 border-bottom: 1px solid #ccc;
-
-/* ↓↓ ここの上下の値を調整して、最終的な隙間を決めます ↓↓ */
 padding: 15px 2px; /* 上下の余白を15px、左右を2pxに設定 */
-
 max-width: none; 
 margin: 0;
 }
 
-/* ↓↓ この3行の設定を追加してください ↓↓ */
+/* Projectsにおける実績ごとの見出し */
 .project-box p {
-/* pタグが持つデフォルトの余白をなくす */
-margin: 0;
+font-size: 10px;
+  margin: 0;
 }
 
 
