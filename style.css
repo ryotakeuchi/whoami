@@ -2,7 +2,6 @@ body {
   font-family: "Montserrat", sans-serif;
   padding: 20px;
 }
-
 .div-box-1 {
   display: flex;
   align-items: flex-start;
@@ -10,28 +9,27 @@ body {
   max-width: 1200px;
   margin: 0 auto;
 }
-.whoami-master {
-  flex: 1;
-}
+.whoami-master,
 .Projects-master {
-  flex: 3;
+  flex: 1;
 }
 
 /*---------------------------------------------*/
-/* ★ 左カラム：who am i を固定する設定 ★ */
 .whoami-master {
-  /* position: sticky を指定 */
-  position: -webkit-sticky; /* Safari用の古い書き方 */
+  position: -webkit-sticky;
   position: sticky;
-  /* 画面の上から20pxの位置で固定 */
   top: 20px;
 }
+
 .whoami-title,
 .projects-title {
     font-size: 2rem;
     font-weight: bold;
     color: #000000;
+    /* ★★★★★ この一行で高さを揃えます ★★★★★ */
+    margin-top: 0;
 }
+
 .whoami-master p {
   font-size: 15px;
   margin: 0;
@@ -46,23 +44,14 @@ body {
   margin: 0;
 }
 
-/* ★ 右カラム：「projects」の見出しを固定する設定 ★ */
 .projects-title {
-  /* position: sticky を指定 */
-  position: -webkit-sticky; /* Safari用の古い書き方 */
+  position: -webkit-sticky;
   position: sticky;
-
-  /* 画面の上から20pxの位置で固定 */
   top: 20px;
-
-  /* 背景色を指定しないと、下の文字が透けてしまうため必須 */
   background-color: white;
-
-  /* 見出しとリストの間に少し余白を持たせる */
   padding-bottom: 10px;
 }
 
-/* --- 変更なし：そのまま --- */
 .project-box {
   border: none;
   border-bottom: 1px solid #ccc;
@@ -78,4 +67,6 @@ body {
     color: inherit;
     text-decoration: none;
 }
-/*---------------------------------------------*/
+/*---------------------------------------------*/```
+
+この修正で、スクロール時の見出しのずれが解消されるはずです。
