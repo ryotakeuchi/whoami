@@ -71,7 +71,7 @@ body {
 /* .project-box全体をホバーした時のスタイル */
 .project-box:hover {
   /* ホバー時の背景色を指定（薄いグレー） */
-  background-color: #f5f5f5;
+  background-color: #0000ff;
   /* カーソルを手の形（ポインター）に変える */
   cursor: pointer;
 }
