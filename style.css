@@ -1,5 +1,5 @@
 body {
-  font-family: "Montserrat";
+  font-family: "Montserrat", sans-serif; /* フォント名の指定を修正 */
   padding: 20px;
 }
 .div-box-1 {
@@ -10,10 +10,12 @@ body {
   margin: 0 auto;
 }
 
+/* --- 左カラムと右カラムの幅の比率を調整 --- */
 .whoami-master {
   flex: 1;
 }
 .Projects-master {
+  /* 右側を少し広めに設定 */
   flex: 3;
 }
 
@@ -29,7 +31,6 @@ body {
     font-size: 2rem;
     font-weight: bold;
     color: #000000;
-    /* ★★★★★ この一行で高さを揃えます ★★★★★ */
     margin-top: 0;
 }
 
@@ -55,18 +56,39 @@ body {
   padding-bottom: 10px;
 }
 
+/* --- ここから変更・追記 --- */
+
 .project-box {
   border: none;
   border-bottom: 1px solid #ccc;
-  padding: 15px 2px;
+  padding: 15px 10px; /* 左右の余白を少し広げました */
   max-width: none; 
   margin: 0;
+  /* 背景色が0.2秒かけて滑らかに変化するように設定 */
+  transition: background-color 0.2s ease;
 }
+
+/* .project-box全体をホバーした時のスタイル */
+.project-box:hover {
+  /* ホバー時の背景色を指定（薄いグレー） */
+  background-color: #f5f5f5;
+  /* カーソルを手の形（ポインター）に変える */
+  cursor: pointer;
+}
+
 .project-box p {
   font-size: 15px;
   margin: 0;
 }
 
+/* リンクのデフォルトスタイルをリセット */
+.projects-title-link {
+    /* 下線をなくす */
+    text-decoration: none;
+    /* 親要素の色（黒）を継承する */
+    color: inherit;
+    /* リンクの範囲をクリックエリア全体に広げるおまじない */
+    display: block;
+}
 
-/*---------------------------------------------*/
-
+/* --- ここまで変更・追記 --- */
