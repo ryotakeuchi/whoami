@@ -164,8 +164,7 @@ body {
 }
 /* 右カラムの見出しや文章のスタイル */
 .project-content h1,
-.project-content h2,
-.project-content h3 {
+.project-content h2 {
     margin-top: 0;
 }
 .project-content p {
