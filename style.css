@@ -6,39 +6,39 @@ body {
 }
 
 
-.whoami-master p {
-font-size: 15px;
-  margin: 0;
+
+
+/*---------------------------------------------*/
+.whoami-master{
+  border: none;
+  border-bottom: 1px solid #ccc;
 }
+    .whoami-master p {
+    font-size: 15px;
+      margin: 0;
+    }
+/*---------------------------------------------*/
 
 
 
-
-
+/*---------------------------------------------*/
 .Projects-master{
   margin: none;
   margin-top: 100px;
 }
+        .project-box {
+        border: none;
+        border-bottom: 1px solid #ccc;
+        padding: 15px 2px; /* 上下の余白を15px、左右を2pxに設定 */
+        max-width: none; 
+        margin: 0;
+        }
 
-
-
-
-
-
-.project-box {
-border: none;
-border-bottom: 1px solid #ccc;
-padding: 15px 2px; /* 上下の余白を15px、左右を2pxに設定 */
-max-width: none; 
-margin: 0;
-}
-
-/* Projectsにおける実績ごとの見出し */
-.project-box p {
-font-size: 15px;
-  margin: 0;
-}
-
-
+        /* Projectsにおける実績ごとの見出し */
+        .project-box p {
+        font-size: 15px;
+          margin: 0;
+        }
+/*---------------------------------------------*/
 
 
