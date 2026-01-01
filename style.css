@@ -6,6 +6,11 @@ body {
 }
 
 
+.whoami-master p {
+font-size: 15px;
+  margin: 0;
+}
+
 
 
 
@@ -15,16 +20,6 @@ body {
   margin-top: 100px;
 }
 
-
-
-
-
-
-.whoami-title,.projects-title {
-font-size: 30px;
-color: #000000;
-margin: 0;
-}
 
 
 
