@@ -21,7 +21,8 @@
 
 
 .project-box {
-  border: 1px solid #000000;
+  border: none;
+  border-bottom: 1px solid #000000;
   padding: 2px 2px; /* 内側の余白（上下20px, 左右25px） */
 }
 
