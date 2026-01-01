@@ -4,10 +4,6 @@
   }
 
  
-
-
-
-
 .whoami-title,
 .projects-title {
   font-size: 2rem;
@@ -23,29 +19,28 @@
 }
 
 
+
 .project-box {
-  border: 1px solid #000000; /* 枠線（1px・実線・薄い灰色） */
-  padding: 0px;          /* ボックスの内側の余白 */
-  margin-bottom: 0px;    /* 各ボックスの下側の間隔 */
-  }
-
-
-
-
-.projects-title-link {
-  font-size: 1rem;
-  color: inherit;
-  text-decoration: none;
-  cursor: pointer;
+  border: 1px solid #e0e0e0;
+  padding: 20px 25px; /* 内側の余白（上下20px, 左右25px） */
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  max-width: 800px;
+  
+  /* 変更点：各ボックスの下に15pxの隙間を空けて中央揃えにする */
+  margin: 0 auto 15px; 
 }
+
+
+
 @media (max-width: 600px) {
-  .projects-title-link {
-    font-size: 30rem;
+  .whoami-title,
+  .projects-title {
+    font-size: 2.5rem; /* 60remから変更 */
   }
-}
-
-.projects-title-link:hover {
-  text-decoration: underline;
+  .projects-title-link {
+    font-size: 1.2rem; /* 30remから変更 */
+  }
 }
 
 
