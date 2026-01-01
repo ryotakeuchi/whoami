@@ -21,14 +21,8 @@
 
 
 .project-box {
-  border: 1px solid #e0e0e0;
-  padding: 20px 25px; /* 内側の余白（上下20px, 左右25px） */
-  border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-  max-width: 800px;
-  
-  /* 変更点：各ボックスの下に15pxの隙間を空けて中央揃えにする */
-  margin: 0 auto 15px; 
+  border: 1px solid #000000;
+  padding: 2px 2px; /* 内側の余白（上下20px, 左右25px） */
 }
 
 
