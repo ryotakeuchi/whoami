@@ -3,24 +3,12 @@
     font-family: "Montserrat", sans-serif;
   }
 
- 
-.whoami-title,
-.projects-title {
+
+.whoami-title,.projects-title {
   font-size: 2rem;
   font-weight: bold;
   color: #000000;
 }
-
-@media (max-width: 600px) {
-  .whoami-title,
-  .projects-title {
-    font-size: 60rem;
-  }
-}
-
-
-
-
 
 .project-box {
   /* 枠線は下線のみにする */
@@ -28,7 +16,7 @@
   border-bottom: 1px solid #ccc; /* 下線だけを引く（色は薄いグレー） */
 
   /* 内側の余白を調整 */
-  padding: 5px 5px;
+  padding: 2px 2px;
 
   /* 横幅と中央揃えの設定を解除（画面いっぱいに広げる） */
   max-width: none; 
@@ -36,28 +24,6 @@
   /* ボックス間の余白をリセット */
   margin: 0;
 }
-
-/* 最後のボックスの下線は不要な場合（見た目が綺麗になります） */
-.project-box:last-child {
-  border-bottom: none;
-}
-
-
-
-
-
-
-@media (max-width: 600px) {
-  .whoami-title,
-  .projects-title {
-    font-size: 2.5rem; /* 60remから変更 */
-  }
-  .projects-title-link {
-    font-size: 1.2rem; /* 30remから変更 */
-  }
-}
-
-
 
 
 
