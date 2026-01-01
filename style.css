@@ -1,51 +1,92 @@
-
-
-
 body {
-  font-family: "Montserrat";
+  font-family: "Montserrat", sans-serif;
+  /* ページ全体に少し余白を持たせて見やすくします */
+  padding: 20px;
 }
 
 
 
-.div-box-1 {
-margin: none;
+
+/* --- ここからFlexboxを使った2カラムレイアウト設定 --- *//*---------------------------------------------*/
+  /* 2つのセクションを囲む親ボックス */
+    .div-box-1 {
+      /* Flexboxを有効化 */
+      display: flex;
+      
+      /* 子要素（2つのカラム）を上揃えにする */
+      align-items: flex-start;
+
+      /* 2つのカラムの間の隙間を50pxに設定 */
+      gap: 50px;
+
+      /* 画面が広い場合でも、コンテンツが広がりすぎないように最大幅を設定 */
+      max-width: 1200px;
+      /* 中央揃えにする */
+      margin: 0 auto;
+    }
+
+    /* 左カラム（who am i）と右カラム（projects）に共通の設定 */
+    .whoami-master,
+    .Projects-master {
+      /* 親要素の幅に対して均等に幅を分ける（flex: 1 で両方が50%ずつの幅になる） */
+      flex: 1;
+    }
+  /* --- ここまでの設定で横並びになります --- */
+/*---------------------------------------------*//*---------------------------------------------*/
+
+
+
+
+/*---------------------------------------------*//*---------------------------------------------*/
+/* 左カラム：who am i */
+.whoami-master {
+  /* 横並びにしたので、下線は不要なため削除 */
+  border: none;
 }
 
+.whoami-title,
+.projects-title {
+    /* 見出しのスタイルはそのまま */
+    font-size: 2rem;
+    font-weight: bold;
+    color: #000000;
+}
+
+.whoami-master p {
+  font-size: 15px;
+  margin: 0;
+  /* プロフィール項目ごとに行間を少し空ける */
+  padding-bottom: 10px;
+}
+/*---------------------------------------------*//*---------------------------------------------*/
 
 
 
 
-/*---------------------------------------------*/
-.whoami-master{
+
+
+/*---------------------------------------------*//*---------------------------------------------*/
+/* 右カラム：projects */
+.Projects-master {
+  /* 上部の余白はgapで指定するため不要 */
+  margin: 0;
+}
+
+.project-box {
   border: none;
   border-bottom: 1px solid #ccc;
+  padding: 15px 2px;
+  max-width: none; 
+  margin: 0;
 }
-    .whoami-master p {
-    font-size: 15px;
-      margin: 0;
-    }
-/*---------------------------------------------*/
 
-
-
-/*---------------------------------------------*/
-.Projects-master{
-  margin: none;
-  margin-top: 100px;
+.project-box p {
+  font-size: 15px;
+  margin: 0;
 }
-        .project-box {
-        border: none;
-        border-bottom: 1px solid #ccc;
-        padding: 15px 2px; /* 上下の余白を15px、左右を2pxに設定 */
-        max-width: none; 
-        margin: 0;
-        }
 
-        /* Projectsにおける実績ごとの見出し */
-        .project-box p {
-        font-size: 15px;
-          margin: 0;
-        }
-/*---------------------------------------------*/
-
-
+.projects-title-link {
+    color: inherit;
+    text-decoration: none;
+}
+/*---------------------------------------------*//*---------------------------------------------*/
