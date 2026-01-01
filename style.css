@@ -20,11 +20,30 @@
 
 
 
+
+
 .project-box {
-  border: none;
-  border-bottom: 1px solid #000000;
-  padding: 2px 2px; /* 内側の余白（上下20px, 左右25px） */
+  /* 枠線は下線のみにする */
+  border: none; /* まず全ての線をリセット */
+  border-bottom: 1px solid #ccc; /* 下線だけを引く（色は薄いグレー） */
+
+  /* 内側の余白を調整 */
+  padding: 15px 10px;
+
+  /* 横幅と中央揃えの設定を解除（画面いっぱいに広げる） */
+  max-width: none; 
+
+  /* ボックス間の余白をリセット */
+  margin: 0;
 }
+
+/* 最後のボックスの下線は不要な場合（見た目が綺麗になります） */
+.project-box:last-child {
+  border-bottom: none;
+}
+
+
+
 
 
 
