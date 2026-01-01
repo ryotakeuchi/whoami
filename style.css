@@ -57,24 +57,25 @@ body {
 }
 
 /* --- ここから変更・追記 --- */
-
 .project-box {
   border: none;
   border-bottom: 1px solid #ccc;
-  padding: 15px 10px; /* 左右の余白を少し広げました */
+  padding: 15px 10px;
   max-width: none; 
   margin: 0;
-  /* 背景色が0.2秒かけて滑らかに変化するように設定 */
-  transition: background-color 0.2s ease;
+  /* ★ 背景色と「文字色」の両方が滑らかに変化するように追記 ★ */
+  transition: background-color 0.2s ease, color 0.2s ease;
 }
-
-/* .project-box全体をホバーした時のスタイル */
 .project-box:hover {
-  /* ホバー時の背景色を指定（薄いグレー） */
+  /* ホバー時の背景色を青に指定 */
   background-color: #0000ff;
-  /* カーソルを手の形（ポインター）に変える */
+  /* ★ ホバー時の文字色を白にする一行を追加 ★ */
+  color: white;
   cursor: pointer;
 }
+
+
+
 
 .project-box p {
   font-size: 15px;
