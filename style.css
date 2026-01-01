@@ -24,11 +24,10 @@
 
 
 .project-box {
-  border: 1px solid #ccc; /* 枠線（1px・実線・薄い灰色） */
-  padding: 20px;          /* ボックスの内側の余白 */
-  margin-bottom: 25px;    /* 各ボックスの下側の間隔 */
-  border-radius: 8px;     /* 角を少し丸くする */
-}
+  border: 1px solid #000000; /* 枠線（1px・実線・薄い灰色） */
+  padding: 2px;          /* ボックスの内側の余白 */
+  margin-bottom: 0px;    /* 各ボックスの下側の間隔 */
+  }
 
 
 
