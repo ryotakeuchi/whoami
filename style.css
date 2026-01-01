@@ -6,26 +6,43 @@
  
 
 
-  .whoami-title {
-    font-size: 30px;
-    font-weight: bold;
-    color: #000000;
-  }
+  
 
+.whoami-title,
+.projects-title {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #000000;
+}
+
+@media (max-width: 600px) {
+  .whoami-title,
   .projects-title {
-    font-size: 30px;
-    font-weight: bold;
-    color: #000000;
+    font-size: 1rem;
   }
-  
+}
 
+
+
+
+.projects-title-link {
+  font-size: 1rem;
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;
+}
+@media (max-width: 600px) {
   .projects-title-link {
-    color: inherit;
-    text-decoration: none;
-    cursor: pointer;
+    font-size: 0.5rem;
   }
-  
-  .projects-title-link:hover {
-    text-decoration: underline;
-  }
+}
+
+.projects-title-link:hover {
+  text-decoration: underline;
+}
+
+
+
+
+
 
