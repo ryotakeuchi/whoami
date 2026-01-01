@@ -1,5 +1,5 @@
 body {
-  font-family: "Montserrat", sans-serif;
+  font-family: "Montserrat";
   padding: 20px;
 }
 .div-box-1 {
@@ -9,9 +9,12 @@ body {
   max-width: 1200px;
   margin: 0 auto;
 }
-.whoami-master,
-.Projects-master {
+
+.whoami-master {
   flex: 1;
+}
+.Projects-master {
+  flex: 3;
 }
 
 /*---------------------------------------------*/
@@ -67,6 +70,5 @@ body {
     color: inherit;
     text-decoration: none;
 }
-/*---------------------------------------------*/```
+/*---------------------------------------------*/
 
-この修正で、スクロール時の見出しのずれが解消されるはずです。
