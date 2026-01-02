@@ -133,6 +133,30 @@ body {
   background-color: #f0f0f0;
 }
 
+/* サイドバー内のプロジェクトリスト */
+.project-list-menu {
+  /* この設定でリスト部分だけがスクロールするようになります */
+  overflow-y: auto;
+  flex-grow: 1;
+}
+/* スクロールバーの見た目を少し控えめにする（任意） */
+.project-list-menu::-webkit-scrollbar {
+    width: 6px;
+}
+.project-list-menu::-webkit-scrollbar-thumb {
+    background-color: #ccc;
+    border-radius: 3px;
+}
+
+/* 現在表示中のプロジェクトをハイライトするスタイル */
+.project-list-menu .project-box.active {
+    background-color: #0000ff;
+    color: white;
+}
+.project-list-menu .project-box.active:hover {
+    background-color: #0000cc; /* ホバー時に少し色を濃くする */
+}
+
 
 /* --- 右カラム（コンテンツエリア） --- */
 .project-content {
