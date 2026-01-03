@@ -28,7 +28,6 @@ body {
 .whoami-master p { font-size: 12px; margin: 0; padding-bottom: 10px; }
 .introduction-block { margin-top: 20px; padding-top: 20px; border-top: 1px solid #eee; }
 .introduction-block p { font-size: 12px; line-height: 1.8; margin-bottom: 1em; }
-.introduction-block p:last-child { margin-bottom: 0; }
 
 /* --- 右カラム (`projects`) --- */
 .projects-title { position: -webkit-sticky; position: sticky; top: 20px; background-color: white; padding-bottom: 10px; }
@@ -41,8 +40,9 @@ body {
 .project-box.hidden { display: none; }
 .projects-title-link { text-decoration: none; color: inherit; }
 .projects-title-link::after { content: ''; position: absolute; top: 0; right: 0; bottom: 0; left: 0; }
-.project-meta { display: flex; align-items: center; gap: 16px; position: relative; z-index: 1; }
-.tags-container { display: flex; flex-wrap: wrap; gap: 6px; justify-content: flex-end; /* ★ タグが複数行になった場合に右揃えにする */ }
+
+/* ★ HTML構造の変更に伴い .project-meta を削除 */
+.tags-container { display: flex; flex-wrap: wrap; gap: 8px; position: relative; z-index: 1; justify-content: flex-end; }
 .tag { font-size: 10px; font-weight: 500; padding: 3px 10px; background-color: #eee; color: #555; border-radius: 12px; white-space: nowrap; transition: 0.2s ease; }
 .project-box:hover .tag { background-color: rgba(255, 255, 255, 0.2); color: white; }
 .year-tag { font-size: 10px; padding: 2px 9px; color: #888; border: 1px solid #ddd; border-radius: 6px; white-space: nowrap; transition: 0.2s ease; }
@@ -51,10 +51,7 @@ body {
 /* =================================================== */
 /* ===== 3. プロジェクト詳細ページ のスタイル ===== */
 /* =================================================== */
-
-/* ★ PCではスマホ用の「戻る」リンクを非表示に */
 .back-link-mobile { display: none; }
-
 .project-detail-container { display: flex; align-items: flex-start; gap: 100px; max-width: 1200px; margin: 0 auto; padding: 20px; }
 .project-sidebar { flex: 1; position: -webkit-sticky; position: sticky; top: 20px; height: calc(100vh - 40px); display: flex; flex-direction: column; }
 .back-link { display: block; font-weight: 500; font-size: 14px; text-decoration: none; color: #333; margin-bottom: 20px; padding: 8px 0; }
@@ -62,16 +59,13 @@ body {
 .project-list-menu .project-box { padding-top: 12px; padding-bottom: 12px; }
 .project-list-menu .project-box.active { background-color: #f0f0f0; cursor: default; }
 .project-list-menu .project-box.active:hover { background-color: #f0f0f0; color: inherit; }
-.project-list-menu .project-box.active .tag { background-color: #ddd; color: #555; }
-.project-list-menu .project-box.active:hover .tag { background-color: #ddd; }
 .project-content { flex: 2.5; padding-top: 8px; }
 /* ... (以下、テキストスタイルなどは変更なし) ... */
 
 /* =================================================== */
 /* ===== 4. 共通コンポーネントのスタイル ===== */
 /* =================================================== */
-#image-preview-container { position: fixed; z-index: 9999; width: 500px; height: 500px; border-radius: 8px; box-shadow: 0 10px 30px rgba(0,0,0,0.2); background-size: cover; background-position: center; opacity: 0; visibility: hidden; pointer-events: none; transition: opacity 0.2s ease, transform 0.2s ease; transform: rotate(-5deg) scale(0.9); }
-#image-preview-container.visible { opacity: 1; visibility: visible; transform: rotate(-5deg) scale(1); }
+#image-preview-container { /* ... (変更なし) ... */ }
 
 /* =================================================== */
 /* ===== 5. レスポンシブ対応 (〜767px) ===== */
@@ -80,61 +74,38 @@ body {
   body { padding: 15px; }
   .div-box-1 { flex-direction: column; gap: 40px; }
   .whoami-master { position: static; }
-  .whoami-title, .projects-title { font-size: 1.8rem; }
-  .Projects-master { width: 100%; }
-  .projects-title { position: static; background-color: transparent; }
-
+  .projects-title { position: static; }
+  
   /* ★ トップページのレイアウト崩れを修正 */
   .project-box {
-    flex-direction: column; /* 縦積みに変更 */
-    align-items: flex-start; /* 左揃えに */
-    gap: 10px; /* タイトルとタグの間の隙間 */
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
   }
-  .project-meta {
-      width: 100%; /* タグエリアの幅を100%に */
-      justify-content: flex-start; /* タグを左揃えに */
+  .tags-container {
+    justify-content: flex-start; /* ★ スマホではタグを左揃えに */
   }
   
-  #image-preview-container { display: none; } /* スマホではホバー画像は非表示 */
+  #image-preview-container { display: none; }
 
-  /* ★ 「戻る」リンクの挙動を修正 */
-  .project-detail-container { flex-direction: column; gap: 20px; padding: 0; } /* paddingを0に */
-  .project-sidebar { display: none; } /* PC用サイドバーは非表示 */
-  .back-link-mobile { /* スマホ用リンクを表示してスタイリング */
-    display: block;
-    font-weight: 500;
-    font-size: 14px;
-    text-decoration: none;
-    color: #333;
-    margin-bottom: 30px;
+  /* ★ 詳細ページのレイアウトを修正 */
+  .project-detail-container { flex-direction: column; gap: 20px; padding: 0; }
+  .project-sidebar { display: none; }
+  .back-link-mobile { display: block; font-weight: 500; font-size: 14px; text-decoration: none; color: #333; margin-bottom: 30px; }
+  .project-content {
+    width: 100%;
+    padding-top: 0;
+    /* ★ 詳細ページコンテンツに左右の余白を追加して、大きすぎるのを防ぐ */
+    padding-left: 15px;
+    padding-right: 15px;
   }
-  .project-content { width: 100%; padding-top: 0; }
-  .project-content::before { content: none; } /* 偽のリンクは不要なので削除 */
-  .project-content h1 { font-size: 1.8rem; }
+  .project-content::before { content: none; }
 }
 
 /* =================================================== */
 /* ===== 6. 詳細ページ：埋め込み動画用のスタイル ===== */
 /* =================================================== */
-
-/* ★ 縦長と正方形の動画コンテナのスタイルを分離 */
-
-/* 縦長動画 (9:16) */
-.video-container {
-    width: 100%;
-}
-.video-container iframe {
-    width: 100%;
-    display: block;
-    aspect-ratio: 9/16;
-}
-
-/* 正方形動画 (1:1) */
-.video-container-square {
-    width: 100%;
-}
-.video-container-square video {
-    width: 100%;
-    display: block;
-    aspect-ratio: 1 / 1; /* 正方形に設定 */
-}
+.video-container { width: 100%; }
+.video-container iframe { width: 100%; display: block; aspect-ratio: 9/16; }
+.video-container-square { width: 100%; }
+.video-container-square video { width: 100%; display: block; aspect-ratio: 1 / 1; }
