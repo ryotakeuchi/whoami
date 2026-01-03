@@ -17,19 +17,13 @@ body {
 /* =================================================== */
 /* ===== 2. トップページ (`index.html`) のスタイル ===== */
 /* =================================================== */
-
-/* --- メインレイアウト (2カラム) --- */
 .div-box-1 { display: flex; align-items: flex-start; gap: 100px; max-width: 1200px; margin: 0 auto; }
 .whoami-master { flex: 1; position: -webkit-sticky; position: sticky; top: 20px; }
 .Projects-master { flex: 3; margin: 0; }
-
-/* --- 左カラム (`whoami`) --- */
 .whoami-title, .projects-title { font-size: 2rem; font-weight: bold; color: #000; margin-top: 0; }
 .whoami-master p { font-size: 12px; margin: 0; padding-bottom: 10px; }
 .introduction-block { margin-top: 20px; padding-top: 20px; border-top: 1px solid #eee; }
 .introduction-block p { font-size: 12px; line-height: 1.8; margin-bottom: 1em; }
-
-/* --- 右カラム (`projects`) --- */
 .projects-title { position: -webkit-sticky; position: sticky; top: 20px; background-color: white; padding-bottom: 10px; }
 .filter-container { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #eee; }
 .filter-btn { background: transparent; border: 1px solid #ddd; color: #555; padding: 5px 15px; border-radius: 15px; font-family: inherit; font-size: 12px; cursor: pointer; transition: all 0.2s ease; }
@@ -40,8 +34,6 @@ body {
 .project-box.hidden { display: none; }
 .projects-title-link { text-decoration: none; color: inherit; }
 .projects-title-link::after { content: ''; position: absolute; top: 0; right: 0; bottom: 0; left: 0; }
-
-/* ★ HTML構造の変更に伴い .project-meta を削除 */
 .tags-container { display: flex; flex-wrap: wrap; gap: 8px; position: relative; z-index: 1; justify-content: flex-end; }
 .tag { font-size: 10px; font-weight: 500; padding: 3px 10px; background-color: #eee; color: #555; border-radius: 12px; white-space: nowrap; transition: 0.2s ease; }
 .project-box:hover .tag { background-color: rgba(255, 255, 255, 0.2); color: white; }
@@ -60,7 +52,19 @@ body {
 .project-list-menu .project-box.active { background-color: #f0f0f0; cursor: default; }
 .project-list-menu .project-box.active:hover { background-color: #f0f0f0; color: inherit; }
 .project-content { flex: 2.5; padding-top: 8px; }
-/* ... (以下、テキストスタイルなどは変更なし) ... */
+.project-content h1 { font-size: 2.5rem; margin-top: 0; margin-bottom: 10px; }
+.project-content h2 { font-size: 1.2rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; border-bottom: 1px solid #eee; padding-bottom: 10px; margin-top: 60px; margin-bottom: 20px; }
+.project-content p, .project-content ul { font-size: 14px; line-height: 1.8; max-width: 600px; }
+
+/* ★★★★★ 詳細ページのタグコンテナのスタイルを追加 ★★★★★ */
+.detail-tags-container {
+  display: flex;
+  flex-wrap: wrap; /* 折り返しを許可 */
+  align-items: center;
+  gap: 10px; /* タグ間の隙間 */
+  margin-bottom: 40px; /* タグエリア全体の下の余白 */
+  margin-top: 20px;
+}
 
 /* =================================================== */
 /* ===== 4. 共通コンポーネントのスタイル ===== */
@@ -71,34 +75,23 @@ body {
 /* ===== 5. レスポンシブ対応 (〜767px) ===== */
 /* =================================================== */
 @media (max-width: 767px) {
-  body { padding: 15px; }
-  .div-box-1 { flex-direction: column; gap: 40px; }
+  body { padding: 0; } /* ★ bodyのpaddingを0に */
+  .div-box-1 { flex-direction: column; gap: 40px; padding: 15px; } /* ★ トップページのコンテナにpaddingを設定 */
   .whoami-master { position: static; }
   .projects-title { position: static; }
-  
-  /* ★ トップページのレイアウト崩れを修正 */
-  .project-box {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 10px;
-  }
-  .tags-container {
-    justify-content: flex-start; /* ★ スマホではタグを左揃えに */
-  }
-  
+  .project-box { flex-direction: column; align-items: flex-start; gap: 10px; }
+  .tags-container { justify-content: flex-start; }
   #image-preview-container { display: none; }
 
-  /* ★ 詳細ページのレイアウトを修正 */
-  .project-detail-container { flex-direction: column; gap: 20px; padding: 0; }
-  .project-sidebar { display: none; }
-  .back-link-mobile { display: block; font-weight: 500; font-size: 14px; text-decoration: none; color: #333; margin-bottom: 30px; }
-  .project-content {
-    width: 100%;
-    padding-top: 0;
-    /* ★ 詳細ページコンテンツに左右の余白を追加して、大きすぎるのを防ぐ */
-    padding-left: 15px;
-    padding-right: 15px;
+  /* ★★★★★ 詳細ページのレイアウトを修正 ★★★★★ */
+  .project-detail-container { 
+    flex-direction: column; 
+    gap: 20px; 
+    padding: 15px; /* ★ bodyの代わりにここにpaddingを設定 */
   }
+  .project-sidebar { display: none; }
+  .back-link-mobile { display: block; font-weight: 500; font-size: 14px; text-decoration: none; color: #333; margin-bottom: 30px; padding: 15px 15px 0; }
+  .project-content { width: 100%; padding-top: 0; }
   .project-content::before { content: none; }
 }
 
