@@ -1,190 +1,151 @@
+/* =================================================== */
+/* ===== 1. 基本設定 & 共通スタイル ===== */
+/* =================================================== */
 body {
-  font-family: "Montserrat", sans-serif; /* フォント名の指定を修正 */
+  font-family: 'Montserrat', 'Zen Kaku Gothic New', sans-serif;
   padding: 20px;
-}
-.div-box-1 {
-  display: flex;
-  align-items: flex-start;
-  gap: 50px;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-/* --- 左カラムと右カラムの幅の比率を調整 --- */
-.whoami-master {
-  flex: 1;
-}
-.Projects-master {
-  /* 右側を少し広めに設定 */
-  flex: 3;
-}
-
-/*---------------------------------------------*/
-.whoami-master {
-  position: -webkit-sticky;
-  position: sticky;
-  top: 20px;
-}
-
-.whoami-title,
-.projects-title {
-    font-size: 2rem;
-    font-weight: bold;
-    color: #000000;
-    margin-top: 0;
-}
-
-.whoami-master p {
-  font-size: 12px;
-  margin: 0;
-  padding-bottom: 10px;
-}
-/*---------------------------------------------*/
-
-
-
-/*---------------------------------------------*/
-.Projects-master {
-  margin: 0;
-}
-      .projects-title {
-        position: -webkit-sticky;
-        position: sticky;
-        top: 20px;
-        background-color: white;
-        padding-bottom: 10px;
-      }
-
-      /* --- ここから変更・追記 --- */
-      .project-box {
-        border: none;
-        border-bottom: 1px solid #ccc;
-        padding: 15px 10px;
-        max-width: none; 
-        margin: 0;
-        /* ★ 背景色と「文字色」の両方が滑らかに変化するように追記 ★ */
-        transition: background-color 0.2s ease, color 0.2s ease;
-      }
-      .project-box:hover {
-        /* ホバー時の背景色を青に指定 */
-        background-color: #0000ff;
-        /* ★ ホバー時の文字色を白にする一行を追加 ★ */
-        color: white;
-        cursor: pointer;
-      }
-
-      .project-box p {
-        font-size: 12px;
-        margin: 0;
-      }
-
-      /* リンクのデフォルトスタイルをリセット */
-      .projects-title-link {
-          /* 下線をなくす */
-          text-decoration: none;
-          /* 親要素の色（黒）を継承する */
-          color: inherit;
-          /* リンクの範囲をクリックエリア全体に広げるおまじない */
-          display: block;
-      }
-
-
-
-
-
-
-
-
-/* ====================================================================================================== */
-/* ===== プロジェクト詳細ページ用のスタイル ここから ===== */
-
-/* --- 詳細ページのメインレイアウト --- */
-.project-detail-container {
-  display: flex;
-  align-items: flex-start;
-  gap: 50px;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-/* --- 左カラム（サイドバー） --- */
-.project-sidebar {
-  flex: 1; /* 右カラムとの幅の比率 */
-  position: -webkit-sticky;
-  position: sticky;
-  top: 20px;
-  /* サイドバーの高さを画面サイズに合わせ、スクロールのために必須 */
-  height: calc(100vh - 40px); 
-  display: flex;
-  flex-direction: column;
-}
-
-/* 「戻る」リンクのスタイル */
-.back-link {
-  display: block;
-  text-decoration: none;
   color: #333;
-  margin-bottom: 20px;
-  padding: 10px;
+  background-color: #fff;
+}
+
+/* =================================================== */
+/* ===== 2. トップページ (`index.html`) のスタイル ===== */
+/* =================================================== */
+
+/* --- メインレイアウト (2カラム) --- */
+.div-box-1 { display: flex; align-items: flex-start; gap: 100px; max-width: 1200px; margin: 0 auto; }
+.whoami-master { flex: 1; position: -webkit-sticky; position: sticky; top: 20px; }
+.Projects-master { flex: 3; margin: 0; }
+
+/* --- 左カラム (`whoami`) --- */
+.whoami-title, .projects-title { font-size: 2rem; font-weight: bold; color: #000; margin-top: 0; }
+.whoami-master p { font-size: 12px; margin: 0; padding-bottom: 10px; }
+.introduction-block { margin-top: 20px; padding-top: 20px; border-top: 1px solid #eee; }
+.introduction-block p { font-size: 12px; line-height: 1.8; margin-bottom: 1em; }
+.introduction-block p:last-child { margin-bottom: 0; }
+
+/* --- 右カラム (`projects`) --- */
+.projects-title { position: -webkit-sticky; position: sticky; top: 20px; background-color: white; padding-bottom: 10px; }
+.filter-container { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #eee; }
+.filter-btn { background: transparent; border: 1px solid #ddd; color: #555; padding: 5px 15px; border-radius: 15px; font-family: inherit; font-size: 12px; cursor: pointer; transition: all 0.2s ease; }
+.filter-btn:hover { background-color: #f0f0f0; border-color: #ccc; }
+.filter-btn.active { background-color: #000; color: #fff; border-color: #000; }
+.project-box { position: relative; display: flex; font-size: 12px; justify-content: space-between; align-items: center; border: none; border-bottom: 1px solid #ccc; padding: 15px 10px; margin: 0; transition: background-color 0.2s ease, color 0.2s ease; }
+.project-box:hover { background-color: #0000ff; color: white; cursor: pointer; }
+.project-box.hidden { display: none; }
+.projects-title-link { text-decoration: none; color: inherit; }
+.projects-title-link::after { content: ''; position: absolute; top: 0; right: 0; bottom: 0; left: 0; }
+.project-meta { display: flex; align-items: center; gap: 16px; position: relative; z-index: 1; }
+.tags-container { display: flex; gap: 6px; }
+.tag { font-size: 10px; font-weight: 500; padding: 3px 10px; background-color: #eee; color: #555; border-radius: 12px; white-space: nowrap; transition: 0.2s ease; }
+.project-box:hover .tag { background-color: rgba(255, 255, 255, 0.2); color: white; }
+.year-tag { font-size: 10px; padding: 2px 9px; color: #888; border: 1px solid #ddd; border-radius: 6px; white-space: nowrap; transition: 0.2s ease; }
+.project-box:hover .year-tag { border-color: rgba(255, 255, 255, 0.5); color: white; }
+
+
+/* =================================================== */
+/* ===== 3. プロジェクト詳細ページ のスタイル ===== */
+/* =================================================== */
+
+/* --- メインレイアウト --- */
+.project-detail-container { display: flex; align-items: flex-start; gap: 100px; max-width: 1200px; margin: 0 auto; padding: 20px; }
+
+/* --- 左カラム (サイドバー) --- */
+.project-sidebar { flex: 1; position: -webkit-sticky; position: sticky; top: 20px; height: calc(100vh - 40px); display: flex; flex-direction: column; }
+.back-link { display: block; font-weight: 500; font-size: 14px; text-decoration: none; color: #333; margin-bottom: 20px; padding: 8px 0; }
+.project-list-menu { overflow-y: auto; flex-grow: 1; border-top: 1px solid #eee; }
+.project-list-menu .project-box { padding-top: 12px; padding-bottom: 12px; }
+.project-list-menu .project-box.active { background-color: #f0f0f0; cursor: default; }
+.project-list-menu .project-box.active:hover { background-color: #f0f0f0; color: inherit; }
+.project-list-menu .project-box.active .tag { background-color: #ddd; color: #555; }
+.project-list-menu .project-box.active:hover .tag { background-color: #ddd; }
+
+/* --- 右カラム (コンテンツ) --- */
+.project-content { flex: 2.5; padding-top: 8px; }
+.project-content h1 { font-size: 2.5rem; margin-top: 0; margin-bottom: 10px; }
+.project-content h2 { font-size: 1.2rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; border-bottom: 1px solid #eee; padding-bottom: 10px; margin-top: 60px; margin-bottom: 20px; }
+.project-content h3 { font-size: 1rem; font-weight: 700; margin-top: 40px; margin-bottom: 20px; }
+.project-content p, .project-content ul { font-size: 14px; line-height: 1.8; max-width: 600px; }
+.project-content ul { padding-left: 20px; margin-bottom: 1.5em; }
+.project-main-image { width: 100%; height: auto; border-radius: 5px; margin-bottom: 60px; border: 1px solid #eee; }
+.detail-tags-container { display: flex; align-items: center; gap: 10px; margin-bottom: 40px; margin-top: 20px; }
+
+
+
+/* ★★★★★ 詳細ページ テキストスタイル（更新版）★★★★★ */
+.concept-lead { font-size: 15px; line-height: 1.9; font-weight: 400; max-width: 600px; }
+.concept-lead strong { font-weight: 700; }
+
+.concept-list {list-style: none; padding-left: 22px; /* 2px(線の太さ) + 20px(余白) = 22px */}
+.concept-list li { margin-bottom: 10px; }
+.concept-list li strong { display: block; font-size: 15px; margin-bottom: 5px; font-weight: 700; }
+.concept-list li span { color: #555; }
+
+.catchphrase {margin-left: 22px; border-left: 2px solid #000; padding-left: 20px; }
+.catchphrase p { font-size: 16px; font-weight: 700; margin-bottom: 5px; }
+.catchphrase footer { font-size: 13px; color: #777; }
+
+/* =================================================== */
+/* ===== 4. 共通コンポーネントのスタイル ===== */
+/* =================================================== */
+#image-preview-container { position: fixed; z-index: 9999; width: 500px; height: 500px; border-radius: 8px; box-shadow: 0 10px 30px rgba(0,0,0,0.2); background-size: cover; background-position: center; opacity: 0; visibility: hidden; pointer-events: none; transition: opacity 0.2s ease, transform 0.2s ease; transform: rotate(-5deg) scale(0.9); }
+#image-preview-container.visible { opacity: 1; visibility: visible; transform: rotate(-5deg) scale(1); }
+
+/* =================================================== */
+/* ===== 5. レスポンシブ対応 (〜767px) ===== */
+/* =================================================== */
+@media (max-width: 767px) {
+  body { padding: 15px; }
+  .div-box-1 { flex-direction: column; gap: 40px; }
+  .whoami-master { position: static; }
+  .whoami-title, .projects-title { font-size: 1.8rem; }
+  .projects-master { width: 100%; }
+  .projects-title { position: static; background-color: transparent; }
+  #image-preview-container { display: none; }
+  .project-detail-container { flex-direction: column; gap: 20px; padding: 15px; }
+  .project-sidebar { display: none; }
+  .project-content { width: 100%; padding-top: 0; }
+  .project-content::before { content: '← back to projects'; display: block; font-weight: 500; font-size: 14px; text-decoration: none; color: #333; margin-bottom: 30px; }
+  .project-content h1 { font-size: 1.8rem; }
+}
+
+
+
+
+/* =================================================== */
+/* ===== 詳細ページ：埋め込み動画用のスタイル ===== */
+/* =================================================== */
+
+/* 動画を囲むコンテナ */
+.video-container {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%; /* 16:9 のアスペクト比を維持するための設定 */
+  margin-bottom: 20px; /* 動画と下の画像の間の余白 */
   border-radius: 5px;
-  transition: background-color 0.2s ease;
-}
-.back-link:hover {
-  background-color: #f0f0f0;
+  overflow: hidden; /* 角丸を適用するため */
+  border: 1px solid #eee;
 }
 
-/* サイドバー内のプロジェクトリスト */
-.project-list-menu {
-  /* この設定でリスト部分だけがスクロールするようになります */
-  overflow-y: auto;
-  flex-grow: 1;
-}
-/* スクロールバーの見た目を少し控えめにする（任意） */
-.project-list-menu::-webkit-scrollbar {
-    width: 6px;
-}
-.project-list-menu::-webkit-scrollbar-thumb {
-    background-color: #ccc;
-    border-radius: 3px;
-}
-
-/* 現在表示中のプロジェクトをハイライトするスタイル */
-.project-list-menu .project-box.active {
-    background-color: #0000ff;
-    color: white;
-}
-.project-list-menu .project-box.active:hover {
-    background-color: #0000cc; /* ホバー時に少し色を濃くする */
+.video-container-square {
+  width: 800px;
+  height: 800px;       /* 正方形フォーマット用：親とvideoの高さを揃える */
+  position: relative;  /* 念のため */
+  margin: 0 auto;
+  border-radius: 5px;
+  overflow: hidden; /* 角丸を適用するため */
+  border: 1px solid #eee;
+  background: #000;    /* 下地が見えるとき黒背景 */
 }
 
 
-/* --- 右カラム（コンテンツエリア） --- */
-.project-content {
-  flex: 3; /* 左カラムとの幅の比率 */
-}
-/* 右カラムの見出しや文章のスタイル */
-.project-content h1,
-.project-content h2 {
-    margin-top: 0;
-}
-.project-content p {
-  font-size: 12px;
+
+/* 埋め込まれたiframe要素 */
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 
-/* 外部リンクのボタンスタイル */
-.external-link {
-    display: inline-block;
-    background-color: #333;
-    color: white;
-    padding: 10px 15px;
-    text-decoration: none;
-    border-radius: 5px;
-    margin-top: 20px;
-    transition: background-color 0.2s ease;
-}
-.external-link:hover {
-    background-color: #555;
-}
-
-/* ===== プロジェクト詳細ページ用のスタイル ここまで ===== */
-/* ====================================================================================================== */

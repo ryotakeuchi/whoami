@@ -1,69 +1,190 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-<meta charset="UTF-8">
-<title>whoami</title>
-<link rel="icon" href="favicon.png">
-<link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>whoami</title>
+    <link rel="icon" href="favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Zen+Kaku+Gothic+New:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
-
 
 <body>
 
+    <!-- 画像プレビュー用の舞台 -->
+    <div id="image-preview-container"></div>
+    
+    <div class="div-box-1">
+    
+        <div class="whoami-master">
+            <h1 class="whoami-title">whoami</h1>
+            <p>name: ryo takeuchi</p>
+            <p>born: 1996</p>
+            <p>location: tokyo</p>
+            <p>contact: ryodzn@gmail.com</p>
+        
+            <!-- ↓↓ このブロックをまるごと追加します ↓↓ -->
+            <div class="introduction-block">
+                <p>
+                    1996年生まれ。<br>
+                    クリエイティブディレクター／プロデューサー。
+                </p>
+                <p>
+                    デザインと映像表現の探求からキャリアを始め、広告代理店、音楽レーベルにて多様な実務経験を積む。
+                    現在は特定の組織に属さず、プランニング、ディレクション、プロデュースを軸に活動。
+                </p>
+            </div>
+            <!-- ↑↑ ここまで ↑↑ -->
+        </div>
+    
+        <div class="Projects-master">
+            <h1 class="projects-title">projects</h1>
 
-<div class="div-box-1">
+            <!-- ★★★★★ フィルターボタンのコンテナをここに追加 ★★★★★ -->
+            <div class="filter-container">
+                <button class="filter-btn active" data-filter="all">All</button>
+                
+                <!--# ⓪ 複合・ハイブリッド系（横断担当）Creative Producer（企画〜制作〜進行を一貫して担当） -->
+                <button class="filter-btn" data-filter="Creative Producer">Creative Producer</button> 
+                <!--# ① 企画・統括・意思決定系（上流）※「責任を持って判断した」ことを示すラベル-->
+                <button class="filter-btn" data-filter="Producer">Producer</button>
+                <!--# ② クリエイティブ統括・監督系 ※「表現の方向性を決めた」ことを示すラベル-->
+                <button class="filter-btn" data-filter="Creative Director">Creative Director</button>
+                <button class="filter-btn" data-filter="Art Director">Art Director</button>
+                <!--# ③ 音楽・IP・人材系（A&R領域）※「人・作品を伸ばす役割」-->
+                <button class="filter-btn" data-filter="A&R">A&R</button>
+                <!--# ④ 制作実務（手を動かした証明）※成果物ベースで評価されるラベル-->
+                <button class="filter-btn" data-filter="Designer">Designer</button>
+                <button class="filter-btn" data-filter="Video Editor">Video Editor</button>
+                <button class="filter-btn" data-filter="Photographer">Photographer</button>
+                <button class="filter-btn" data-filter="Photographer">Cinematographer</button>
+                <!--# ⑥ ビジネス・運用・マーケ系-->
+                <button class="filter-btn" data-filter="MCN Manager">MCN Manager</button>
+                <!--その他-->
+                <button class="filter-btn" data-filter="Fanmade">Fanmade</button>
+                <!--年代ラベル-->
+                <button class="filter-btn" data-filter="2020">2020</button>
+                <button class="filter-btn" data-filter="2021">2021</button>
+                <button class="filter-btn" data-filter="2022">2022</button>
+                <button class="filter-btn" data-filter="2023">2023</button>
+                <button class="filter-btn" data-filter="2024">2024</button>
+                <button class="filter-btn" data-filter="2025">2025</button>
+                <button class="filter-btn" data-filter="2026">2026</button>
+                <button class="filter-btn" data-filter="Fanmade">Fanmade</button>
+            </div>
+            
+            <!-- プロジェクトリスト (HTMLは変更なし) -->
+            <div class="project-list-wrapper"> <!-- ← リスト全体を囲むラッパーを追加 -->
+                
+                <div class="project-box" data-image="images/xxxxxxxxxxxxxxxxxxxxx.png">
+                    <a href="xupdate.html" class="projects-title-link">XUPDATE</a>
+                    <div class="project-meta">
+                        <div class="tags-container">
+                            <span class="tag">Creative Producer</span>
+                        </div>
+                        <span class="year-tag">2026</span>
+                    </div>
+                </div>
 
-    <div class="whoami-master">
-        <h1 class="whoami-title">who am i</h1>
-        <p>name: ryo takeuchi</p>
-        <p>location: tokyo</p>
-        <p>contact: ryodzn@gmail.com</p>
+                <div class="project-box" data-image="images/xxxxxxxxx">
+                    <a href="peacestudio.html" class="projects-title-link">Pea(ie)ce Studio</a>
+                    <div class="project-meta">
+                        <div class="tags-container">
+                            <span class="tag">Creative Producer</span>
+                        </div>
+                        <span class="year-tag">2026</span>
+                    </div>
+                </div>
+                
+                <div class="project-box" data-image="images/top-fzero-kv.png">
+                    <a href="fzero.html" class="projects-title-link">FZERO</a>
+                    <div class="project-meta">
+                        <div class="tags-container">
+                            <span class="tag">Creative Producer</span>
+                        </div>
+                        <span class="year-tag">2026</span>
+                    </div>
+                </div>
+                
+                <div class="project-box" data-image="images/xxxxxxxxx">
+                    <a href="whoami.html" class="projects-title-link">whoami</a>
+                    <div class="project-meta">
+                        <div class="tags-container">
+                            <span class="tag">Web Design</span>
+                        </div>
+                        <span class="year-tag">2026</span>
+                    </div>
+                </div>
+
+                <div class="project-box" data-image="images/saki1stfanmeeting-kv1.png">
+                    <a href="saki-1st-fan-meeting.html" class="projects-title-link">大賀咲希 - 1st Fan Meeting</a>
+                    <div class="project-meta">
+                        <div class="tags-container">
+                            <span class="tag">Photographer</span>
+                            <span class="tag">Designer</span>
+                            <span class="tag">Video Editor</span>
+                        </div>
+                        <span class="year-tag">2025</span>
+                    </div>
+                </div>
+
+                <div class="project-box" data-image="images/dazbee-sugarcoat-kv1.png">
+                    <a href="dazbee-sugarcoat.html" class="projects-title-link">DAZBEE - Sugarcoat [Fanmade]</a>
+                    <div class="project-meta">
+                        <div class="tags-container">
+                            <span class="tag">Fanmade</span>
+                            <span class="tag">Designer</span>
+                            <span class="tag">Video Editor</span>
+                        </div>
+                        <span class="year-tag">2025</span>
+                    </div>
+                </div>
+
+                <div class="project-box" data-image="images/mottomusic-serene-garden-kv1.png">
+                    <a href="mottomusic-serene-garden.html" class="projects-title-link">MOTTO MUSIC , INuya , 現実みろ - セレーネガーデン [Fanmade]</a>
+                    <div class="project-meta">
+                        <div class="tags-container">
+                            <span class="tag">Fanmade</span>
+                            <span class="tag">Designer</span>
+                            <span class="tag">Video Editor</span>
+                        </div>
+                        <span class="year-tag">2025</span>
+                    </div>
+                </div>
+
+                <div class="project-box" data-image="images/natsunose-hontoudayo-kv1.jpg">
+                    <a href="natsunose-hontoudayo.html" class="projects-title-link">ナツノセ - 本当だよ feat.花本朔 Piano弾き語りver.</a>
+                    <div class="project-meta">
+                        <div class="tags-container">
+                            <span class="tag">Designer</span>
+                            <span class="tag">Video Editor</span>
+                        </div>
+                        <span class="year-tag">2025</span>
+                    </div>
+                </div>
+
+            
+
+                
+            
+            
+            
+            
+            
+            
+            
+            </div>
+
+        </div>
     </div>
 
-    <div class="Projects-master">
-        <h1 class="projects-title">projects</h1>
-        <!-- ↓↓ プロジェクトの数だけこのブロックを繰り返します ↓↓ -->
-        <div class="project-box"><p><a href="projects1.html" class="projects-title-link">projects1</a></p></div>
-        <div class="project-box"><p><a href="projects2.html" class="projects-title-link">projects2</a></p></div>
-        <div class="project-box"><p><a href="projects3.html" class="projects-title-link">projects3</a></p></div>
-        <div class="project-box"><p><a href="projects4.html" class="projects-title-link">projects4</a></p></div>
-        <div class="project-box"><p><a href="projects5.html" class="projects-title-link">projects5</a></p></div>
-        <div class="project-box"><p><a href="projects6.html" class="projects-title-link">projects6</a></p></div>
-        <div class="project-box"><p><a href="projects7.html" class="projects-title-link">projects7</a></p></div>
-        <div class="project-box"><p><a href="projects8.html" class="projects-title-link">projects8</a></p></div>
-        <div class="project-box"><p><a href="projects9.html" class="projects-title-link">projects9</a></p></div>
-        <div class="project-box"><p><a href="projects10.html" class="projects-title-link">projects10</a></p></div>
-        <div class="project-box"><p><a href="projects1.html" class="projects-title-link">projects11</a></p></div>
-        <div class="project-box"><p><a href="projects2.html" class="projects-title-link">projects12</a></p></div>
-        <div class="project-box"><p><a href="projects3.html" class="projects-title-link">projects13</a></p></div>
-        <div class="project-box"><p><a href="projects4.html" class="projects-title-link">projects14</a></p></div>
-        <div class="project-box"><p><a href="projects5.html" class="projects-title-link">projects15</a></p></div>
-        <div class="project-box"><p><a href="projects6.html" class="projects-title-link">projects16</a></p></div>
-        <div class="project-box"><p><a href="projects7.html" class="projects-title-link">projects17</a></p></div>
-        <div class="project-box"><p><a href="projects8.html" class="projects-title-link">projects18</a></p></div>
-        <div class="project-box"><p><a href="projects9.html" class="projects-title-link">projects19</a></p></div>
-        <div class="project-box"><p><a href="projects10.html" class="projects-title-link">projects20</a></p></div>
-        <div class="project-box"><p><a href="projects1.html" class="projects-title-link">projects21</a></p></div>
-        <div class="project-box"><p><a href="projects2.html" class="projects-title-link">projects22</a></p></div>
-        <div class="project-box"><p><a href="projects3.html" class="projects-title-link">projects23</a></p></div>
-        <div class="project-box"><p><a href="projects4.html" class="projects-title-link">projects24</a></p></div>
-        <div class="project-box"><p><a href="projects5.html" class="projects-title-link">projects25</a></p></div>
-        <div class="project-box"><p><a href="projects6.html" class="projects-title-link">projects26</a></p></div>
-        <div class="project-box"><p><a href="projects7.html" class="projects-title-link">projects27</a></p></div>
-        <div class="project-box"><p><a href="projects8.html" class="projects-title-link">projects28</a></p></div>
-        <div class="project-box"><p><a href="projects9.html" class="projects-title-link">projects29</a></p></div>
-        <div class="project-box"><p><a href="projects10.html" class="projects-title-link">projects30</a></p></div>
-        <!-- ↑↑ ここまで ↑↑ -->
-    </div>
-
-</div>
 
 
 
 
 
-
-<script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
