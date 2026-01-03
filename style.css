@@ -4,7 +4,7 @@
 body {
   font-family: 'Montserrat', 'Zen Kaku Gothic New', sans-serif;
   margin: 0;
-  padding-top: 10px; 
+  padding-top: 50px; 
   color: #333;
   background-color: #fff;
 }
@@ -41,7 +41,6 @@ html, body { overflow-x: hidden; }
   /* 左側と高さを合わせる */
   top: 10px; 
   background-color: white; 
-  padding-bottom: 10px; 
   z-index: 10; }
 
 .filter-container { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 20px; padding-bottom: 20px; border-bottom: 1px solid #eee; }
@@ -221,75 +220,49 @@ html, body {
 
 
 
-
 /* =================================================== */
-/* PC版：固定レイアウト設定 */
+/* PC版：index.htmlのみに適用する固定レイアウト設定 */
 /* =================================================== */
 @media (min-width: 768px) {
-  /* 1. 画面全体のスクロールを止める */
-  html, body {
-    height: 100vh;
-    overflow: auto;
-    padding-top: 20px; 
-  }
-  /*個別に sticky をかけるのではなく、囲った親要素にだけかけます。*/
-  .projects-sticky-header {
+  
+  /* body.page-index がある時だけ実行 */
+  .page-index .projects-sticky-header {
     position: sticky;
-    top: 0;               /* これで塊ごと一番上に固定されます */
+    top: 0px;
     z-index: 20;
     background-color: #fff;
-    padding-top: 0px;    /* 上の余白をここで調整 */
-    margin-bottom: 10px;  /* リストとの間の距離 */
+    padding-top: 0px;
+    margin-bottom: 10px;
   }
 
-  /* 2. メインコンテナの高さ設定 */
-  .div-box-1 {
-    height: calc(100vh - 80px); /* bodyのpadding-top分を引く */
+  /* メインコンテナの高さ設定 */
+  .page-index .div-box-1 {
+    height: calc(100vh - 80px);
     display: flex;
+    overflow: hidden; /* 親要素でのはみ出しを禁止 */
   }
 
-  /* 3. 左カラムはそのまま固定 */
-  .whoami-master {
+  /* 左カラム */
+  .page-index .whoami-master {
     flex: 1;
     height: 100%;
+    position: relative; /* 個別のstickyを解除 */
+    top: 0;
   }
 
-  /* 4. 右カラム：ここをスクロールの「箱」にする */
-  .Projects-master {
+  /* 右カラム：ここをスクロールの「箱」にする */
+  .page-index .Projects-master {
     flex: 3;
     height: 100%;
-    overflow-y: auto; /* 縦スクロールを許可 */
+    overflow-y: auto; /* ここだけスクロールさせる */
     position: relative;
-    padding-right: 15px; /* スクロールバーとの重なり防止 */
+    padding-right: 15px;
   }
 
-  .projects-title {
-    padding-bottom: 20px;
-
-  }
-
-  /* 個別のsticky設定は削除または無効化する */
-  .projects-title, .filter-container {
-    position: static;     /* stickyを解除 */
+  /* 不要なstickyの解除 */
+  .page-index .projects-title, 
+  .page-index .filter-container {
+    position: static;
     background-color: transparent;
-    margin: 0;
   }
-      /* =================================================== */
-        /*（メモ：まだ未着手）詳細ページの時のタイトルとタグ部分をグループにして固定しておく*/
-      /* =================================================== */
-
-
-
-
-
 }
-
-
-
-
-
-
-
-
-
-/* =================================================== */
