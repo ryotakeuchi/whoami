@@ -16,7 +16,17 @@
     <div class="project-detail-container">
         <!-- ============== 左カラム（ナビゲーション） ============== -->
         <div class="project-sidebar">
-            <a href="index.html" class="back-link">&larr; back to projects</a>
+            <a href="index.html" class="back-link" onclick="goBack(event)">&larr; back to projects</a>
+                <script>
+                function goBack(e) {
+                    e.preventDefault();
+                    if (window.history.length > 1) {
+                        window.history.back();
+                    } else {
+                        window.location.href = 'index.html';
+                    }
+                }
+                </script>
             <div class="project-list-menu">
                 <!-- index.htmlからプロジェクトリスト全体をコピー -->
                 <div class="project-box" data-image="images/xupdate.png">
