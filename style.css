@@ -107,8 +107,8 @@ body {
   .project-content { width: 100%; padding-top: 0; }
   .project-content::before { content: '← back to projects'; display: block; font-weight: 500; font-size: 14px; text-decoration: none; color: #333; margin-bottom: 30px; }
   .project-content h1 { font-size: 1.8rem; }
+  .video-container iframe,.video-container-square video {width: 100vw;max-width: 100vw;height: auto;aspect-ratio: 16/9; /* 縦長の場合は 9/16 など調整 */}
 }
-
 
 
 
@@ -148,4 +148,3 @@ body {
   width: 100%;
   height: 100%;
 }
-
