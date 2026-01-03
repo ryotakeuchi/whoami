@@ -1,4 +1,19 @@
 /* =================================================== */
+/* ===== 0. 基本設定 & 横揺れ防止の魔法 ===== */
+/* =================================================== */
+html, body {
+  /* ★ 横スクロールを強制的に防止するおまじない */
+  overflow-x: hidden;
+}
+
+* {
+  /* ★ 要素の幅の計算方法を直感的にする魔法のコード */
+  /* これにより、paddingやborderが幅の内側に含まれるようになります */
+  box-sizing: border-box;
+}
+
+
+/* =================================================== */
 /* ===== 1. 基本設定 & 共通スタイル ===== */
 /* =================================================== */
 body {
@@ -49,8 +64,7 @@ body {
 
 /* --- メインレイアウト --- */
 .project-detail-container { display: flex; align-items: flex-start; gap: 100px; max-width: 1200px; margin: 0 auto; padding: 20px; }
-
-/* --- 左カラム (サイドバー) --- */
+/* ... (以下、詳細ページの他のスタイルは変更なし) ... */
 .project-sidebar { flex: 1; position: -webkit-sticky; position: sticky; top: 20px; height: calc(100vh - 40px); display: flex; flex-direction: column; }
 .back-link { display: block; font-weight: 500; font-size: 14px; text-decoration: none; color: #333; margin-bottom: 20px; padding: 8px 0; }
 .project-list-menu { overflow-y: auto; flex-grow: 1; border-top: 1px solid #eee; }
@@ -59,8 +73,6 @@ body {
 .project-list-menu .project-box.active:hover { background-color: #f0f0f0; color: inherit; }
 .project-list-menu .project-box.active .tag { background-color: #ddd; color: #555; }
 .project-list-menu .project-box.active:hover .tag { background-color: #ddd; }
-
-/* --- 右カラム (コンテンツ) --- */
 .project-content { flex: 2.5; padding-top: 8px; }
 .project-content h1 { font-size: 2.5rem; margin-top: 0; margin-bottom: 10px; }
 .project-content h2 { font-size: 1.2rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; border-bottom: 1px solid #eee; padding-bottom: 10px; margin-top: 60px; margin-bottom: 20px; }
@@ -69,18 +81,12 @@ body {
 .project-content ul { padding-left: 20px; margin-bottom: 1.5em; }
 .project-main-image { width: 100%; height: auto; border-radius: 5px; margin-bottom: 60px; border: 1px solid #eee; }
 .detail-tags-container { display: flex; align-items: center; gap: 10px; margin-bottom: 40px; margin-top: 20px; }
-
-
-
-/* ★★★★★ 詳細ページ テキストスタイル（更新版）★★★★★ */
 .concept-lead { font-size: 15px; line-height: 1.9; font-weight: 400; max-width: 600px; }
 .concept-lead strong { font-weight: 700; }
-
-.concept-list {list-style: none; padding-left: 22px; /* 2px(線の太さ) + 20px(余白) = 22px */}
+.concept-list {list-style: none; padding-left: 22px; }
 .concept-list li { margin-bottom: 10px; }
 .concept-list li strong { display: block; font-size: 15px; margin-bottom: 5px; font-weight: 700; }
 .concept-list li span { color: #555; }
-
 .catchphrase {margin-left: 22px; border-left: 2px solid #000; padding-left: 20px; }
 .catchphrase p { font-size: 16px; font-weight: 700; margin-bottom: 5px; }
 .catchphrase footer { font-size: 13px; color: #777; }
@@ -99,7 +105,7 @@ body {
   .div-box-1 { flex-direction: column; gap: 40px; }
   .whoami-master { position: static; }
   .whoami-title, .projects-title { font-size: 1.8rem; }
-  .projects-master { width: 100%; }
+  .Projects-master { width: 100%; }
   .projects-title { position: static; background-color: transparent; }
   #image-preview-container { display: none; }
   .project-detail-container { flex-direction: column; gap: 20px; padding: 15px; }
@@ -109,45 +115,24 @@ body {
   .project-content h1 { font-size: 1.8rem; }
 }
 
-
-
 /* =================================================== */
 /* ===== 詳細ページ：埋め込み動画用のスタイル ===== */
+/* =================================================== */
 
-/* ===== 動画部分の完全レスポンシブ対応（スマホ優先） ===== */
 .video-container,
 .video-container-square {
-    width: 100%;
-    max-width: 100vw;
+    width: 100%; /* ★ 100vwから100%に変更 */
     height: auto;
     margin: 0 auto;
 }
 
 .video-container iframe, 
 .video-container-square video {
-    width: 100%;
-    max-width: 100vw;
+    width: 100%; /* ★ 100vwから100%に変更 */
     height: auto;
     display: block;
     aspect-ratio: 9/16;
     margin: 0 auto;
 }
 
-@media (max-width: 767px) {
-    .video-container,
-    .video-container-square {
-        width: 100vw !important;
-        height: auto !important;
-        max-width: 100vw !important;
-    }
-    .video-container iframe, 
-    .video-container-square video {
-        width: 100vw !important;
-        max-width: 100vw !important;
-        height: auto !important;
-        aspect-ratio: 9/16 !important;
-    }
-}
-/* =================================================== */
-
-/* 動画を囲むコンテナ */
+/* ★ 100vwを使っていたメディアクエリは不要なため削除しました */
