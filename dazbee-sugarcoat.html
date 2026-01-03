@@ -11,29 +11,20 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- スマホ表示の時だけ表示される「戻る」リンク -->
-    <a href="index.html" class="back-link-mobile">&larr; back to projects</a>
     
     <div class="project-detail-container">
         <!-- ============== 左カラム（ナビゲーション） ============== -->
         <div class="project-sidebar">
             <a href="index.html" class="back-link">&larr; back to projects</a>
             <div class="project-list-menu">
-                <!-- 
-                    ここにindex.htmlからプロジェクトリスト全体をコピーします。
-                    現在表示中のプロジェクトに class="active" を付けます。
-                -->
-                <div class="project-box" data-image="images/xupdate.jpg">
+                <!-- index.htmlからプロジェクトリスト全体をコピー -->
+                <div class="project-box" data-image="images/xupdate.png">
                     <a href="xupdate.html" class="projects-title-link">XUPDATE</a>
-                    <div class="tags-container">
-                        <span class="tag">Creative Producer</span><span class="year-tag">2026</span>
-                    </div>
+                    <div class="project-meta"><div class="tags-container"><span class="tag">Branding</span></div><span class="year-tag">2022</span></div>
                 </div>
-                <div class="project-box active" data-image="images/dazbee-sugarcoat-kv1.png">
-                    <a href="dazbee-sugarcoat.html" class="projects-title-link">DAZBEE - Sugarcoat [Fanmade]</a>
-                    <div class="tags-container">
-                        <span class="tag">Fanmade</span><span class="tag">Designer</span><span class="year-tag">2025</span>
-                    </div>
+                <div class="project-box active" data-image="images/fzero.png">
+                    <a href="fzero.html" class="projects-title-link">FZERO</a>
+                    <div class="project-meta"><div class="tags-container"><span class="tag">Branding</span></div><span class="year-tag">2025</span></div>
                 </div>
                 <!-- ... 他のプロジェクトも同様に ... -->
             </div>
@@ -43,28 +34,26 @@
         <div class="project-content">
             
             <h1>DAZBEE - Sugarcoat [Fanmade]</h1>
-            
-            <!-- ★★★★★ タグのHTML構造を修正 ★★★★★ -->
             <div class="detail-tags-container">
-                <span class="tag">Fanmade</span>
-                <span class="tag">Designer</span>
-                <span class="tag">Video Editor</span>
+                <div class="tags-container">
+                    <span class="tag">Fanmade</span>
+                    <span class="tag">Designer</span>
+                    <span class="tag">Video Editor</span>
+                </div>
                 <span class="year-tag">2025</span>
             </div>
-
             <img src="images/dazbee-sugarcoat-kv1.png" alt="メインビジュアル" class="project-main-image">
             <img src="images/dazbee-sugarcoat-kv2.png" alt="メインビジュアル" class="project-main-image">
-            <div class="video-container-square">
-                <video controls muted playsinline width="800">
-                    <source src="images/dazbee-sugarcoat-movie.mp4" type="video/mp4">
-                </video>
-            </div>
+            <div class="video-container-square"><video controls width="800"><source src="images/dazbee-sugarcoat-movie.mp4" type="video/mp4"></video></div>
             
+
+            <!-- "about" セクション -->
             <h2>about</h2>
             <p class="concept-lead">
                 After Effectsの技術習得を目的とし、ファンメイド動画を企画・デザイン・制作しました。
             </p>
             
+            <!-- "role" セクション -->
             <h2>role</h2>
             <ul>
                 <li>Designer</li>
