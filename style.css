@@ -107,44 +107,47 @@ body {
   .project-content { width: 100%; padding-top: 0; }
   .project-content::before { content: '← back to projects'; display: block; font-weight: 500; font-size: 14px; text-decoration: none; color: #333; margin-bottom: 30px; }
   .project-content h1 { font-size: 1.8rem; }
-  .video-container iframe,.video-container-square video {width: 100vw;max-width: 100vw;height: auto;aspect-ratio: 16/9; /* 縦長の場合は 9/16 など調整 */}
 }
 
 
 
 /* =================================================== */
 /* ===== 詳細ページ：埋め込み動画用のスタイル ===== */
+
+/* ===== 動画部分の完全レスポンシブ対応（スマホ優先） ===== */
+.video-container,
+.video-container-square {
+    width: 100%;
+    max-width: 100vw;
+    height: auto;
+    margin: 0 auto;
+}
+
+.video-container iframe, 
+.video-container-square video {
+    width: 100%;
+    max-width: 100vw;
+    height: auto;
+    display: block;
+    aspect-ratio: 9/16;
+    margin: 0 auto;
+}
+
+@media (max-width: 767px) {
+    .video-container,
+    .video-container-square {
+        width: 100vw !important;
+        height: auto !important;
+        max-width: 100vw !important;
+    }
+    .video-container iframe, 
+    .video-container-square video {
+        width: 100vw !important;
+        max-width: 100vw !important;
+        height: auto !important;
+        aspect-ratio: 9/16 !important;
+    }
+}
 /* =================================================== */
 
 /* 動画を囲むコンテナ */
-.video-container {
-  position: relative;
-  width: 100%;
-  padding-top: 56.25%; /* 16:9 のアスペクト比を維持するための設定 */
-  margin-bottom: 20px; /* 動画と下の画像の間の余白 */
-  border-radius: 5px;
-  overflow: hidden; /* 角丸を適用するため */
-  border: 1px solid #eee;
-}
-
-.video-container-square {
-  width: 800px;
-  height: 800px;       /* 正方形フォーマット用：親とvideoの高さを揃える */
-  position: relative;  /* 念のため */
-  margin: 0 auto;
-  border-radius: 5px;
-  overflow: hidden; /* 角丸を適用するため */
-  border: 1px solid #eee;
-  background: #000;    /* 下地が見えるとき黒背景 */
-}
-
-
-
-/* 埋め込まれたiframe要素 */
-.video-container iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-}
