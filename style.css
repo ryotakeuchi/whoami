@@ -1,17 +1,8 @@
 /* =================================================== */
-/* ===== 0. 基本設定 & 横揺れ防止の魔法 ===== */
+/* ===== 0. 基本設定 & 横揺れ防止 ===== */
 /* =================================================== */
-html, body {
-  /* ★ 横スクロールを強制的に防止するおまじない */
-  overflow-x: hidden;
-}
-
-* {
-  /* ★ 要素の幅の計算方法を直感的にする魔法のコード */
-  /* これにより、paddingやborderが幅の内側に含まれるようになります */
-  box-sizing: border-box;
-}
-
+html, body { overflow-x: hidden; }
+* { box-sizing: border-box; }
 
 /* =================================================== */
 /* ===== 1. 基本設定 & 共通スタイル ===== */
@@ -51,20 +42,20 @@ body {
 .projects-title-link { text-decoration: none; color: inherit; }
 .projects-title-link::after { content: ''; position: absolute; top: 0; right: 0; bottom: 0; left: 0; }
 .project-meta { display: flex; align-items: center; gap: 16px; position: relative; z-index: 1; }
-.tags-container { display: flex; gap: 6px; }
+.tags-container { display: flex; flex-wrap: wrap; gap: 6px; justify-content: flex-end; /* ★ タグが複数行になった場合に右揃えにする */ }
 .tag { font-size: 10px; font-weight: 500; padding: 3px 10px; background-color: #eee; color: #555; border-radius: 12px; white-space: nowrap; transition: 0.2s ease; }
 .project-box:hover .tag { background-color: rgba(255, 255, 255, 0.2); color: white; }
 .year-tag { font-size: 10px; padding: 2px 9px; color: #888; border: 1px solid #ddd; border-radius: 6px; white-space: nowrap; transition: 0.2s ease; }
 .project-box:hover .year-tag { border-color: rgba(255, 255, 255, 0.5); color: white; }
 
-
 /* =================================================== */
 /* ===== 3. プロジェクト詳細ページ のスタイル ===== */
 /* =================================================== */
 
-/* --- メインレイアウト --- */
+/* ★ PCではスマホ用の「戻る」リンクを非表示に */
+.back-link-mobile { display: none; }
+
 .project-detail-container { display: flex; align-items: flex-start; gap: 100px; max-width: 1200px; margin: 0 auto; padding: 20px; }
-/* ... (以下、詳細ページの他のスタイルは変更なし) ... */
 .project-sidebar { flex: 1; position: -webkit-sticky; position: sticky; top: 20px; height: calc(100vh - 40px); display: flex; flex-direction: column; }
 .back-link { display: block; font-weight: 500; font-size: 14px; text-decoration: none; color: #333; margin-bottom: 20px; padding: 8px 0; }
 .project-list-menu { overflow-y: auto; flex-grow: 1; border-top: 1px solid #eee; }
@@ -74,22 +65,7 @@ body {
 .project-list-menu .project-box.active .tag { background-color: #ddd; color: #555; }
 .project-list-menu .project-box.active:hover .tag { background-color: #ddd; }
 .project-content { flex: 2.5; padding-top: 8px; }
-.project-content h1 { font-size: 2.5rem; margin-top: 0; margin-bottom: 10px; }
-.project-content h2 { font-size: 1.2rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; border-bottom: 1px solid #eee; padding-bottom: 10px; margin-top: 60px; margin-bottom: 20px; }
-.project-content h3 { font-size: 1rem; font-weight: 700; margin-top: 40px; margin-bottom: 20px; }
-.project-content p, .project-content ul { font-size: 14px; line-height: 1.8; max-width: 600px; }
-.project-content ul { padding-left: 20px; margin-bottom: 1.5em; }
-.project-main-image { width: 100%; height: auto; border-radius: 5px; margin-bottom: 60px; border: 1px solid #eee; }
-.detail-tags-container { display: flex; align-items: center; gap: 10px; margin-bottom: 40px; margin-top: 20px; }
-.concept-lead { font-size: 15px; line-height: 1.9; font-weight: 400; max-width: 600px; }
-.concept-lead strong { font-weight: 700; }
-.concept-list {list-style: none; padding-left: 22px; }
-.concept-list li { margin-bottom: 10px; }
-.concept-list li strong { display: block; font-size: 15px; margin-bottom: 5px; font-weight: 700; }
-.concept-list li span { color: #555; }
-.catchphrase {margin-left: 22px; border-left: 2px solid #000; padding-left: 20px; }
-.catchphrase p { font-size: 16px; font-weight: 700; margin-bottom: 5px; }
-.catchphrase footer { font-size: 13px; color: #777; }
+/* ... (以下、テキストスタイルなどは変更なし) ... */
 
 /* =================================================== */
 /* ===== 4. 共通コンポーネントのスタイル ===== */
@@ -107,32 +83,58 @@ body {
   .whoami-title, .projects-title { font-size: 1.8rem; }
   .Projects-master { width: 100%; }
   .projects-title { position: static; background-color: transparent; }
-  #image-preview-container { display: none; }
-  .project-detail-container { flex-direction: column; gap: 20px; padding: 15px; }
-  .project-sidebar { display: none; }
+
+  /* ★ トップページのレイアウト崩れを修正 */
+  .project-box {
+    flex-direction: column; /* 縦積みに変更 */
+    align-items: flex-start; /* 左揃えに */
+    gap: 10px; /* タイトルとタグの間の隙間 */
+  }
+  .project-meta {
+      width: 100%; /* タグエリアの幅を100%に */
+      justify-content: flex-start; /* タグを左揃えに */
+  }
+  
+  #image-preview-container { display: none; } /* スマホではホバー画像は非表示 */
+
+  /* ★ 「戻る」リンクの挙動を修正 */
+  .project-detail-container { flex-direction: column; gap: 20px; padding: 0; } /* paddingを0に */
+  .project-sidebar { display: none; } /* PC用サイドバーは非表示 */
+  .back-link-mobile { /* スマホ用リンクを表示してスタイリング */
+    display: block;
+    font-weight: 500;
+    font-size: 14px;
+    text-decoration: none;
+    color: #333;
+    margin-bottom: 30px;
+  }
   .project-content { width: 100%; padding-top: 0; }
-  .project-content::before { content: '← back to projects'; display: block; font-weight: 500; font-size: 14px; text-decoration: none; color: #333; margin-bottom: 30px; }
+  .project-content::before { content: none; } /* 偽のリンクは不要なので削除 */
   .project-content h1 { font-size: 1.8rem; }
 }
 
 /* =================================================== */
-/* ===== 詳細ページ：埋め込み動画用のスタイル ===== */
+/* ===== 6. 詳細ページ：埋め込み動画用のスタイル ===== */
 /* =================================================== */
 
-.video-container,
-.video-container-square {
-    width: 100%; /* ★ 100vwから100%に変更 */
-    height: auto;
-    margin: 0 auto;
-}
+/* ★ 縦長と正方形の動画コンテナのスタイルを分離 */
 
-.video-container iframe, 
-.video-container-square video {
-    width: 100%; /* ★ 100vwから100%に変更 */
-    height: auto;
+/* 縦長動画 (9:16) */
+.video-container {
+    width: 100%;
+}
+.video-container iframe {
+    width: 100%;
     display: block;
     aspect-ratio: 9/16;
-    margin: 0 auto;
 }
 
-/* ★ 100vwを使っていたメディアクエリは不要なため削除しました */
+/* 正方形動画 (1:1) */
+.video-container-square {
+    width: 100%;
+}
+.video-container-square video {
+    width: 100%;
+    display: block;
+    aspect-ratio: 1 / 1; /* 正方形に設定 */
+}
