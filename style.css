@@ -4,7 +4,7 @@
 body {
   font-family: 'Montserrat', 'Zen Kaku Gothic New', sans-serif;
   margin: 0;
-  padding-top: 60px; 
+  padding-top: 10px; 
   color: #333;
   background-color: #fff;
 }
@@ -23,7 +23,7 @@ html, body { overflow-x: hidden; }
   position: -webkit-sticky; 
   position: sticky; 
   /* bodyのpaddingと同じ、または少し少なめの値にするとスクロール時に綺麗に止まります */
-  top: 50px;  }
+  top: 10px;  }
 
 .Projects-master { flex: 3; margin: 0; min-height: 100vh; /* 常に画面1枚分の高さを確保 */ }
 
@@ -39,7 +39,7 @@ html, body { overflow-x: hidden; }
   position: -webkit-sticky; 
   position: sticky; 
   /* 左側と高さを合わせる */
-  top: 50px; 
+  top: 10px; 
   background-color: white; 
   padding-bottom: 10px; 
   z-index: 10; }
@@ -230,7 +230,7 @@ html, body {
   html, body {
     height: 100vh;
     overflow: auto;
-    padding-top: 40px; 
+    padding-top: 20px; 
   }
   /*個別に sticky をかけるのではなく、囲った親要素にだけかけます。*/
   .projects-sticky-header {
