@@ -77,13 +77,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 // ★★★★★ ページが読み込まれたら、一定時間後にローディング画面を非表示にする処理を追加 ★★★★★
-  window.addEventListener('load', () => {
+window.addEventListener('load', () => {
     const loader = document.getElementById('loading-screen');
+    const body = document.body;
     
-    // 2.0秒間（2000ミリ秒）表示した後に消す設定
     setTimeout(() => {
         loader.classList.add('loaded');
-    }, 2000);
+        body.classList.add('content-visible'); // スクロール許可用のクラス
+    }, 2000); // 2.0秒表示
 });
 // ★★★★★ ローディング画面の設定　ここまで ★★★★★
 

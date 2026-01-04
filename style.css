@@ -10,6 +10,67 @@ body {
 }
 
 
+        /* ローディング画面全体 */
+          #loading-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background-color: #000 !important; /* 背景は絶対に黒 */
+            display: flex !important;           /* 強制的にFlexを適用 */
+            justify-content: center;
+            align-items: center;
+            z-index: 999999;                    /* 既存のどの要素よりも絶対的に上に */
+            opacity: 1;
+            visibility: visible;
+            transition: opacity 0.8s ease, visibility 0.8s ease;
+          }
+
+          /* 中央の文字 */
+          .loading-text {
+            color: #ffffff !important;          /* 文字色は絶対に白 */
+            font-family: 'against';
+            font-size: 8rem;                  /* PC/スマホで視認できるサイズ */
+            letter-spacing: -0.05em; /* --- 字間を詰める設定 --- */
+            font-weight: 300;
+            opacity: 0;                         /* 初期状態は透明（アニメーションで表示） */
+            animation: fadeInText 1.2s ease forwards !important;
+            display: block !important;
+          }
+
+          /* アニメーションの定義 */
+          @keyframes fadeInText {
+            0% { 
+              opacity: 0; 
+              transform: translateY(10px); 
+            }
+            100% { 
+              opacity: 1; 
+              transform: translateY(0); 
+            }
+          }
+
+          /* 完了時のクラス */
+          #loading-screen.loaded {
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+          }
+
+        /* --- スマホ用メディアクエリ内での補正 --- */
+        @media (max-width: 767px) {
+          /* スマホ時にコンテンツが上に突き抜けないよう調整 */
+          .page-index {
+            overflow: hidden; /* ローディング中はスクロール禁止 */
+          }
+          .page-index.content-visible {
+            overflow: auto; /* ローディング終了後に解除（JSで制御） */
+          }
+        }
+
+
+
 
 /* =================================================== */
 /* ===== 2. トップページ (`index.html`) のスタイル ===== */
@@ -323,55 +384,6 @@ html, body {
   }
 
   
-
-
-    /* =================================================== */
-    /* ローディング画面の設定 */
-    /* =================================================== */
-
-        /* --- ローディング画面のスタイル --- */
-        #loading-screen {
-          position: fixed;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-          background-color: #000; /* 黒背景 */
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          z-index: 9999; /* 最前面に */
-          transition: opacity 0.8s ease, visibility 0.8s ease; /* 消える時の動き */
-        }
-
-        /* 中央の文字 */
-        .loading-text {
-          color: #fff;
-          font-family: 'against';
-          font-size: 1.3rem;
-          font-weight: 600;
-          letter-spacing: 0.1em;
-          /* ふわっと浮かび上がるアニメーション */
-          animation: fadeInText 1.5s ease forwards;
-          opacity: 0;
-        }
-
-        @keyframes fadeInText {
-          0% { opacity: 0; transform: translateY(10px); }
-          100% { opacity: 1; transform: translateY(0); }
-        }
-
-        /* ローディング完了時にJSで付与するクラス */
-        #loading-screen.loaded {
-          opacity: 0;
-          visibility: hidden;
-        }
-
-
-
-
-
-
 
 
 }
