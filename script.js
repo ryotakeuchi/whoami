@@ -77,14 +77,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 // ★★★★★ ページが読み込まれたら、一定時間後にローディング画面を非表示にする処理を追加 ★★★★★
+document.body.classList.add('loading-active');
+
 window.addEventListener('load', () => {
     const loader = document.getElementById('loading-screen');
-    const body = document.body;
     
     setTimeout(() => {
         loader.classList.add('loaded');
-        body.classList.add('content-visible'); // スクロール許可用のクラス
-    }, 2000); // 2.0秒表示
+        document.body.classList.remove('loading-active');
+    }, 1500); // 1.5秒表示。短くしたい場合は1000に変更
 });
 // ★★★★★ ローディング画面の設定　ここまで ★★★★★
 
