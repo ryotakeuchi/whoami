@@ -9,8 +9,7 @@ body {
   background-color: #fff;
 }
 
-/* 横スクロール禁止 */
-html, body { overflow-x: hidden; }
+
 
 /* =================================================== */
 /* ===== 2. トップページ (`index.html`) のスタイル ===== */
@@ -221,48 +220,92 @@ html, body {
 
 
 /* =================================================== */
-/* PC版：index.htmlのみに適用する固定レイアウト設定 */
+/* PC版：index.htmlのみに適用する固定レイアウト設定（修正版） */
 /* =================================================== */
 @media (min-width: 768px) {
   
-  /* body.page-index がある時だけ実行 */
-  .page-index .projects-sticky-header {
-    position: sticky;
-    top: 0px;
-    z-index: 20;
-    background-color: #fff;
-    padding-top: 0px;
-    margin-bottom: 10px;
+  .page-index {
+    /* body自体のスクロールを完全に禁止し、画面にフィットさせる */
+    overflow: hidden;
+    height: 100vh;
   }
 
-  /* メインコンテナの高さ設定 */
   .page-index .div-box-1 {
-    height: calc(100vh - 80px);
+    /* 画面いっぱいの高さから、bodyの上部padding分(50px)を引く */
+    height: calc(100vh - 50px); 
     display: flex;
-    overflow: hidden; /* 親要素でのはみ出しを禁止 */
+    overflow: hidden; 
   }
 
-  /* 左カラム */
   .page-index .whoami-master {
     flex: 1;
     height: 100%;
-    position: relative; /* 個別のstickyを解除 */
-    top: 0;
+    /* whoamiセクション自体も内容が多い場合はスクロール可能にする保険 */
+    overflow-y: auto; 
   }
 
-  /* 右カラム：ここをスクロールの「箱」にする */
+  /* 右カラム：Projects全体 */
   .page-index .Projects-master {
     flex: 3;
     height: 100%;
-    overflow-y: auto; /* ここだけスクロールさせる */
-    position: relative;
-    padding-right: 15px;
+    display: flex;
+    flex-direction: column; /* 見出し＋フィルターと、リストを縦に並べる */
+    overflow: hidden; /* ここ自体はスクロールさせない */
   }
 
-  /* 不要なstickyの解除 */
+  /* 見出しとフィルターの塊を固定 */
+  .page-index .projects-sticky-header {
+    flex-shrink: 0; /* 高さを圧縮させない */
+    background-color: #fff;
+    padding-bottom: 10px;
+  }
+
+  /* ★重要：プロジェクトリストのラッパーだけをスクロールさせる */
+  .page-index .project-list-wrapper {
+    flex-grow: 1; /* 残りの高さをすべて使う */
+    overflow-y: auto; /* ここだけをスクロール可能にする */
+    padding-right: 15px;
+    /* リストの一番下が隠れないように余白を確保 */
+    padding-bottom: 100px; 
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* 不要な設定の解除 */
   .page-index .projects-title, 
   .page-index .filter-container {
     position: static;
-    background-color: transparent;
+    margin: 0;
   }
+
+  /* 右側の見出し「projects」の設定 */
+  .page-index .projects-title {
+    position: static;
+    background-color: transparent;
+    /* introduction-blockのborder位置に合わせるための調整 */
+    margin-top: 0;
+    margin-bottom: 38px; /* ここでラベルとの間の隙間を大きく開ける */
+    padding: 0;
+    line-height: 1;
+  }
+
+  /* フィルターラベルのコンテナ */
+  .page-index .filter-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 0;
+    /* introduction-blockのpadding-top(20px)と整合性を取る */
+    padding-bottom: 20px; 
+    border-bottom: 1px solid #eee; /* この線の位置を左側と揃える */
+  }
+
+  /* リスト部分の開始位置を微調整 */
+  .page-index .project-list-wrapper {
+    flex-grow: 1;
+    overflow-y: auto;
+    padding-top: 10px; /* 線とリストの間の余白 */
+    padding-right: 15px;
+    padding-bottom: 100px;
+  }
+  
 }
