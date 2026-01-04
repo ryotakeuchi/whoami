@@ -76,18 +76,28 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-// ★★★★★ ページが読み込まれたら、一定時間後にローディング画面を非表示にする処理を追加 ★★★★★
-document.body.classList.add('loading-active');
+        // ★★★★★ ページが読み込まれたら、一定時間後にローディング画面を非表示にする処理を追加 ★★★★★
+        window.addEventListener('load', () => {
+            const loader = document.getElementById('loading-screen');
+            if (!loader) return;
 
-window.addEventListener('load', () => {
-    const loader = document.getElementById('loading-screen');
-    
-    setTimeout(() => {
-        loader.classList.add('loaded');
-        document.body.classList.remove('loading-active');
-    }, 1500); // 1.5秒表示。短くしたい場合は1000に変更
-});
-// ★★★★★ ローディング画面の設定　ここまで ★★★★★
+            // sessionStorage を確認（タブを閉じるまで有効）
+            const hasVisited = sessionStorage.getItem('visited_whoami');
+
+            if (!hasVisited) {
+                // --- 初回訪問時：ローディングを実行 ---
+                // 1.5秒後に非表示クラスを追加
+                setTimeout(() => {
+                    loader.classList.add('loaded');
+                    sessionStorage.setItem('visited_whoami', 'true');
+                }, 1500);
+            } else {
+                // --- 2回目以降：即座に非表示 ---
+                loader.style.display = 'none';
+                loader.classList.add('loaded');
+            }
+        });
+        // ★★★★★ ローディング画面の設定　ここまで ★★★★★
 
 
 
