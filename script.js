@@ -73,4 +73,31 @@ document.addEventListener('DOMContentLoaded', () => {
   });
   // ★★★★★ フィルター機能 ここまで ★★★★★
 
+
+
+
+// ★★★★★ ページが読み込まれたら、一定時間後にローディング画面を非表示にする処理を追加 ★★★★★
+  window.addEventListener('load', () => {
+    const loader = document.getElementById('loading-screen');
+    
+    // 2.0秒間（2000ミリ秒）表示した後に消す設定
+    setTimeout(() => {
+        loader.classList.add('loaded');
+    }, 2000);
+});
+// ★★★★★ ローディング画面の設定　ここまで ★★★★★
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 });

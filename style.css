@@ -2,7 +2,7 @@
 /* ===== 1. 基本設定 & 共通スタイル ===== */
 /* =================================================== */
 body {
-  font-family: 'Montserrat', 'Zen Kaku Gothic New', sans-serif;
+  font-family:'Montserrat', 'Zen Kaku Gothic New', sans-serif;
   margin: 0;
   padding-top: 50px; 
   color: #333;
@@ -223,7 +223,21 @@ html, body {
 /* PC版：index.htmlのみに適用する固定レイアウト設定（修正版） */
 /* =================================================== */
 @media (min-width: 768px) {
-  
+
+/* whoami側の調整 */
+.page-index .whoami-master {
+  flex: 1;
+  height: 100%;
+  /* コンテナ自体のパディングも確認 */
+  padding-top: 0; 
+}
+
+/* projects側の調整 */
+.page-index .projects-title {
+  /* 以前設定したmargin-bottomがあれば、ここで上書きして調整 */
+  margin-bottom: 38px; 
+}
+
   .page-index {
     /* body自体のスクロールを完全に禁止し、画面にフィットさせる */
     overflow: hidden;
@@ -307,5 +321,57 @@ html, body {
     padding-right: 15px;
     padding-bottom: 100px;
   }
+
   
+
+
+    /* =================================================== */
+    /* ローディング画面の設定 */
+    /* =================================================== */
+
+        /* --- ローディング画面のスタイル --- */
+        #loading-screen {
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background-color: #000; /* 黒背景 */
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          z-index: 9999; /* 最前面に */
+          transition: opacity 0.8s ease, visibility 0.8s ease; /* 消える時の動き */
+        }
+
+        /* 中央の文字 */
+        .loading-text {
+          color: #fff;
+          font-family: 'against';
+          font-size: 1.3rem;
+          font-weight: 600;
+          letter-spacing: 0.1em;
+          /* ふわっと浮かび上がるアニメーション */
+          animation: fadeInText 1.5s ease forwards;
+          opacity: 0;
+        }
+
+        @keyframes fadeInText {
+          0% { opacity: 0; transform: translateY(10px); }
+          100% { opacity: 1; transform: translateY(0); }
+        }
+
+        /* ローディング完了時にJSで付与するクラス */
+        #loading-screen.loaded {
+          opacity: 0;
+          visibility: hidden;
+        }
+
+
+
+
+
+
+
+
 }
