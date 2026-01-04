@@ -58,19 +58,6 @@ body {
             pointer-events: none;
           }
 
-        /* --- スマホ用メディアクエリ内での補正 --- */
-        @media (max-width: 767px) {
-          /* スマホ時にコンテンツが上に突き抜けないよう調整 */
-          .page-index {
-            overflow: hidden; /* ローディング中はスクロール禁止 */
-          }
-          .page-index.content-visible {
-            overflow: auto; /* ローディング終了後に解除（JSで制御） */
-          }
-          .loading-text {
-            font-size: 1rem;   /* スマホverサイズ */
-          }
-        }
 
 
 
@@ -218,6 +205,19 @@ img,video,iframe { max-width: 100%; height: auto; display: block; }
   .project-sidebar { display: none; }
   .project-content { width: 100%; padding-top: 0; }
   .project-content h1 { font-size: 1.8rem; }
+  
+  
+  /* スマホ時にコンテンツが上に突き抜けないよう調整 */
+  .page-index {
+    overflow: hidden; /* ローディング中はスクロール禁止 */
+  }
+  .page-index.content-visible {
+    overflow: auto; /* ローディング終了後に解除（JSで制御） */
+  }
+  .loading-text {
+    font-size: 1rem;   /* スマホverサイズ */
+  }
+
 }
 
 
