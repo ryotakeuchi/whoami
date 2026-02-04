@@ -10,6 +10,11 @@ body {
 }
 
 
+
+
+
+
+
         /* ローディング画面全体 */
           #loading-screen {
             position: fixed;
@@ -384,7 +389,9 @@ html, body {
     padding-bottom: 100px;
   }
 
-  
 
 
 }
+
+
+

@@ -15,6 +15,8 @@
     <!-- ローディング画面となる要素を追加 -->
     <div id="loading-screen"> <div class="loading-text">who am i ?</div></div>
     <div id="image-preview-container"></div>
+    <!-- ローディングここまで -->
+
 
 
 
@@ -37,7 +39,7 @@
                     クリエイティブディレクター／プロデューサー。
                 </p>
                 <p>
-                    デザインと映像表現の探求からキャリアを始め、広告代理店、音楽レーベル、スタートアップにて多様な実務経験を積む。
+                    デザインと映像表現の探求からキャリアを始め、広告代理店、音楽レーベル、インフルエンサー事務所、スタートアップにて多様な実務経験を積む。
                     現在は特定の組織に属さず、プランニング、ディレクション、プロデュースを軸に活動。
                 </p>
             </div>
@@ -50,9 +52,13 @@
                 <!-- ★★★★★ フィルターボタンのコンテナをここに追加 ★★★★★ -->
                 <div class="filter-container">
                     <button class="filter-btn active" data-filter="all">All</button>
-                    
+                    <!--# ⓪ 立ち上げ -->
+                    <button class="filter-btn" data-filter="Founder"> Founder</button> 
                     <!--# ⓪ 複合・ハイブリッド系（横断担当）Creative Producer（企画〜制作〜進行を一貫して担当） -->
-                    <button class="filter-btn" data-filter="Creative Producer">Creative Producer</button> 
+                    <button class="filter-btn" data-filter="Creative Producer">Creative Producer</button>
+                    <!--# ⓪ 事業開発 -->
+                    <button class="filter-btn" data-filter="BizDev">BizDev</button> 
+                    
                     <!--# ① 企画・統括・意思決定系（上流）※「責任を持って判断した」ことを示すラベル-->
                     <button class="filter-btn" data-filter="Producer">Producer</button>
                     <button class="filter-btn" data-filter="Project Manager">Project Manager</button>
@@ -86,45 +92,83 @@
             <!-- プロジェクトリスト (HTMLは変更なし) -->
             <div class="project-list-wrapper"> <!-- ← リスト全体を囲むラッパーを追加 -->
                 
-                    <div class="project-box" data-image="images/xxxxxxxxxxxxxxxxxxxxx.png">
-                        <a href="project_xupdate.html" class="projects-title-link">XUPDATE</a>
+                    <div class="project-box" data-image="images/xupdate/0.png">
+                        <a href="project_xupdate.html" class="projects-title-link">XUPDATE | UPDATE THE UNKNOWN.</a>
                         <div class="project-meta">
                             <div class="tags-container">
+                                <span class="tag">Founder</span>
+                                <span class="tag">Creative Producer</span>
+                            </div>
+                            <span class="year-tag">2022</span>
+                        </div>
+                    </div>
+
+                    <div class="project-box" data-image="images/app_hitomeshi/0.png">
+                        <a href="project_app_hitomeshi.html" class="projects-title-link">App - HITOMESHI</a>
+                        <div class="project-meta">
+                            <div class="tags-container">
+                                <span class="tag">BizDev</span>
                                 <span class="tag">Creative Producer</span>
                             </div>
                             <span class="year-tag">2026</span>
                         </div>
                     </div>
 
-                    <div class="project-box" data-image="images/xxxxxxxxx">
-                        <a href="project_peacestudio.html" class="projects-title-link">Pea(ie)ce Studio</a>
+                    <div class="project-box" data-image="images/app_mirror/0.png">
+                        <a href="project_app_mirror.html" class="projects-title-link">App - mirror</a>
                         <div class="project-meta">
                             <div class="tags-container">
+                                <span class="tag">BizDev</span>
                                 <span class="tag">Creative Producer</span>
                             </div>
                             <span class="year-tag">2026</span>
                         </div>
                     </div>
+
+                    <div class="project-box" data-image="images/app_kore/0.png">
+                        <a href="project_app_kore.html" class="projects-title-link">App - KORE!</a>
+                        <div class="project-meta">
+                            <div class="tags-container">
+                                <span class="tag">BizDev</span>
+                                <span class="tag">Creative Producer</span>
+                            </div>
+                            <span class="year-tag">2026</span>
+                        </div>
+                    </div>
+
+
+                    <div class="project-box" data-image="images/peace-studio/0.png">
+                        <a href="project_peacestudio.html" class="projects-title-link">Pea(ie)ce Studio</a>
+                        <div class="project-meta">
+                            <div class="tags-container">
+                                <span class="tag">Founder</span>
+                                <span class="tag">Creative Producer</span>
+                            </div>
+                            <span class="year-tag">2022</span>
+                        </div>
+                    </div>
                 
-                    <div class="project-box" data-image="images/top-fzero-kv.png">
+                    <div class="project-box" data-image="images/fzero-kv1.png">
                         <a href="project_fzero.html" class="projects-title-link">FZERO</a>
                         <div class="project-meta">
                             <div class="tags-container">
+                                <span class="tag">Founder</span>
                                 <span class="tag">Creative Producer</span>
                             </div>
                             <span class="year-tag">2025</span>
                         </div>
                     </div>
-                    
-                    <div class="project-box" data-image="images/xxxxxxxxx">
-                        <a href="project_whoami.html" class="projects-title-link">whoami</a>
+
+                    <div class="project-box" data-image="images/nerushika/3.png">
+                        <a href="project_nerushika.html" class="projects-title-link">右脳くん × Fruit of the Loom</a>
                         <div class="project-meta">
                             <div class="tags-container">
-                                <span class="tag">Designer</span>
+                                <span class="tag">Creative Producer</span>
                             </div>
-                            <span class="year-tag">2026</span>
+                            <span class="year-tag">2022</span>
                         </div>
                     </div>
+                    
 
                     <div class="project-box" data-image="images/saki1stfanmeeting-kv1.png">
                         <a href="project_saki-1st-fan-meeting.html" class="projects-title-link">大賀咲希 - 1st Fan Meeting</a>
@@ -174,7 +218,7 @@
                     </div>
 
                     <div class="project-box" data-image="images/XXXXXXXXXXXXXXXXX.jpg">
-                        <a href="project_ujitamai.html" class="projects-title-link">うじたまい</a>
+                        <a href="project_ujitamai.html" class="projects-title-link">[作成中] うじたまい</a>
                         <div class="project-meta">
                             <div class="tags-container">
                                 <span class="tag">A&R</span>
@@ -184,7 +228,7 @@
                     </div>
 
                     <div class="project-box" data-image="images/XXXXXXXXXXXXXXXXX.jpg">
-                        <a href="project_tegacreampan.html" class="projects-title-link">手がクリームパン</a>
+                        <a href="project_tegacreampan.html" class="projects-title-link">[作成中] 手がクリームパン</a>
                         <div class="project-meta">
                             <div class="tags-container">
                                 <span class="tag">A&R</span>
@@ -194,7 +238,7 @@
                     </div>
 
                     <div class="project-box" data-image="images/XXXXXXXXXXXXXXXXX.jpg">
-                        <a href="project_mel.html" class="projects-title-link">Mel</a>
+                        <a href="project_mel.html" class="projects-title-link">[作成中] Mel</a>
                         <div class="project-meta">
                             <div class="tags-container">
                                 <span class="tag">A&R</span>
@@ -204,7 +248,7 @@
                     </div>
 
                     <div class="project-box" data-image="images/XXXXXXXXXXXXXXXXX.jpg">
-                        <a href="project_tsuki.html" class="projects-title-link">月-Tsuki-</a>
+                        <a href="project_tsuki.html" class="projects-title-link">[作成中] 月-Tsuki-</a>
                         <div class="project-meta">
                             <div class="tags-container">
                                 <span class="tag">Creative Producer</span>
@@ -218,7 +262,7 @@
                     <!------------------------------------------------------------------------------->
                     <!--うじたまい コンテンツブロック-->
                     <div class="project-box" data-image="images/XXXXXXXXXXXXXXXXX.jpg">
-                        <a href="project_ujitamai_tuno.html" class="projects-title-link">うじたまい , 40mP - ツノ</a>
+                        <a href="project_ujitamai_tuno.html" class="projects-title-link">[作成中] うじたまい , 40mP - ツノ</a>
                         <div class="project-meta">
                             <div class="tags-container">
                                 <span class="tag">Producer</span>
@@ -228,7 +272,7 @@
                         </div>
                     </div>
                     <div class="project-box" data-image="images/XXXXXXXXXXXXXXXXX.jpg">
-                        <a href="project_ujitamai_hutaribotti.html" class="projects-title-link">うじたまい - ふたりぼっち</a>
+                        <a href="project_ujitamai_hutaribotti.html" class="projects-title-link">[作成中] うじたまい - ふたりぼっち</a>
                         <div class="project-meta">
                             <div class="tags-container">
                                 <span class="tag">Producer</span>
@@ -244,7 +288,7 @@
                     <!------------------------------------------------------------------------------->
                     <!--Mel コンテンツブロック-->
                     <div class="project-box" data-image="images/XXXXXXXXXXXXXXXXX.jpg">
-                        <a href="project_mel_suiseitomati2022.html" class="projects-title-link">Mel - 彗星と街 feat. 4na [Remastered 2022]</a>
+                        <a href="project_mel_suiseitomati2022.html" class="projects-title-link">[作成中] Mel - 彗星と街 feat. 4na [Remastered 2022]</a>
                         <div class="project-meta">
                             <div class="tags-container">
                                 <span class="tag">Producer</span>
@@ -254,7 +298,7 @@
                         </div>
                     </div>
                     <div class="project-box" data-image="images/XXXXXXXXXXXXXXXXX.jpg">
-                        <a href="project_mel_harusigure.html" class="projects-title-link">Mel - 春時雨</a>
+                        <a href="project_mel_harusigure.html" class="projects-title-link">[作成中] Mel - 春時雨</a>
                         <div class="project-meta">
                             <div class="tags-container">
                                 <span class="tag">Producer</span>
@@ -264,78 +308,8 @@
                         </div>
                     </div>
                     <!------------------------------------------------------------------------------->
-                    <div class="project-box" data-image="images/XXXXXXXXXXXXXXXXX.jpg">
-                        <a href="project_XXXXXXXXXXXXX.html" class="projects-title-link">Unknown</a>
-                        <div class="project-meta">
-                            <div class="tags-container">
-                                <span class="tag">?????</span>
-                            </div>
-                            <span class="year-tag">?????</span>
-                        </div>
-                    </div>
-                    <div class="project-box" data-image="images/XXXXXXXXXXXXXXXXX.jpg">
-                        <a href="project_XXXXXXXXXXXXX.html" class="projects-title-link">Unknown</a>
-                        <div class="project-meta">
-                            <div class="tags-container">
-                                <span class="tag">?????</span>
-                            </div>
-                            <span class="year-tag">?????</span>
-                        </div>
-                    </div>
-                    <div class="project-box" data-image="images/XXXXXXXXXXXXXXXXX.jpg">
-                        <a href="project_XXXXXXXXXXXXX.html" class="projects-title-link">Unknown</a>
-                        <div class="project-meta">
-                            <div class="tags-container">
-                                <span class="tag">?????</span>
-                            </div>
-                            <span class="year-tag">?????</span>
-                        </div>
-                    </div>
-                    <div class="project-box" data-image="images/XXXXXXXXXXXXXXXXX.jpg">
-                        <a href="project_XXXXXXXXXXXXX.html" class="projects-title-link">Unknown</a>
-                        <div class="project-meta">
-                            <div class="tags-container">
-                                <span class="tag">?????</span>
-                            </div>
-                            <span class="year-tag">?????</span>
-                        </div>
-                    </div>
-                    <div class="project-box" data-image="images/XXXXXXXXXXXXXXXXX.jpg">
-                        <a href="project_XXXXXXXXXXXXX.html" class="projects-title-link">Unknown</a>
-                        <div class="project-meta">
-                            <div class="tags-container">
-                                <span class="tag">?????</span>
-                            </div>
-                            <span class="year-tag">?????</span>
-                        </div>
-                    </div>
-                    <div class="project-box" data-image="images/XXXXXXXXXXXXXXXXX.jpg">
-                        <a href="project_XXXXXXXXXXXXX.html" class="projects-title-link">Unknown</a>
-                        <div class="project-meta">
-                            <div class="tags-container">
-                                <span class="tag">?????</span>
-                            </div>
-                            <span class="year-tag">?????</span>
-                        </div>
-                    </div>
-                    <div class="project-box" data-image="images/XXXXXXXXXXXXXXXXX.jpg">
-                        <a href="project_XXXXXXXXXXXXX.html" class="projects-title-link">Unknown</a>
-                        <div class="project-meta">
-                            <div class="tags-container">
-                                <span class="tag">?????</span>
-                            </div>
-                            <span class="year-tag">?????</span>
-                        </div>
-                    </div>
-                    <div class="project-box" data-image="images/XXXXXXXXXXXXXXXXX.jpg">
-                        <a href="project_XXXXXXXXXXXXX.html" class="projects-title-link">Unknown</a>
-                        <div class="project-meta">
-                            <div class="tags-container">
-                                <span class="tag">?????</span>
-                            </div>
-                            <span class="year-tag">?????</span>
-                        </div>
-                    </div>
+                    
+                    
             </div>
             
             

@@ -1,5 +1,11 @@
 document.addEventListener('DOMContentLoaded', () => {
 
+ 
+
+
+
+
+
   // ===== 画像ホバープレビュー機能 =====
   const allProjectBoxes = document.querySelectorAll('.project-box');
   const imagePreview = document.getElementById('image-preview-container');
@@ -98,9 +104,6 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
         // ★★★★★ ローディング画面の設定　ここまで ★★★★★
-
-
-
 
 
 
