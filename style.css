@@ -144,7 +144,7 @@ body {
 .project-content h2 { font-size: 1.2rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; border-bottom: 1px solid #eee; padding-bottom: 10px; margin-top: 60px; margin-bottom: 20px; }
 .project-content h3 { font-size: 1rem; font-weight: 700; margin-top: 40px; margin-bottom: 20px; }
 .project-content p, .project-content ul { font-size: 14px; line-height: 1.8; max-width: 800px; }
-.project-content ul { padding-left: 20px; margin-bottom: 1.5em; }
+.project-content ul { padding-left: 20px; margin-bottom: 1.5em;}
 .project-main-image { width: 100%; height: auto; border-radius: 5px; margin-bottom: 60px; border: 1px solid #eee; }
 .detail-tags-container { display: flex; align-items: center; gap: 10px; margin-bottom: 40px; margin-top: 20px; }
 
@@ -154,9 +154,9 @@ body {
 .concept-lead { font-size: 15px; line-height: 1.9; font-weight: 400; max-width: 800px; }
 .concept-lead strong { font-weight: 700; }
 
-.concept-list {list-style: none; padding-left: 22px; /* 2px(線の太さ) + 20px(余白) = 22px */}
+.concept-list {list-style: none; padding-left: 20px; /* 2px(線の太さ) + 20px(余白) = 22px */}
 .concept-list li { margin-bottom: 10px; }
-.concept-list li strong { display: block; font-size: 15px; margin-bottom: 5px; font-weight: 700; }
+.concept-list li strong { display: block; font-size: 13px; margin-bottom: 5px; font-weight: 700; }
 .concept-list li span { color: #555; }
 
 .catchphrase {margin-left: 22px; border-left: 2px solid #000; padding-left: 20px; }
