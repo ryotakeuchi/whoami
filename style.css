@@ -150,6 +150,25 @@ body {
 
 
 
+/* 動画の比率を16:9に保ちつつ、最大横幅を大きく広げる設定 */
+.video-container {
+  position: relative;
+  width: 100%;
+  max-width: 1280px; /* ここを大きくする（FHDに近づけるなら1280〜1920px） */
+  padding-top: 56.25%; /* 16:9の比率を保つ魔法の数字 (9 / 16 * 100) */
+  margin: 0 auto;
+}
+
+.video-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+
+
 /* ★★★★★ 詳細ページ テキストスタイル（更新版）★★★★★ */
 .concept-lead { font-size: 15px; line-height: 1.9; font-weight: 400; max-width: 800px; }
 .concept-lead strong { font-weight: 700; }
@@ -162,6 +181,13 @@ body {
 .catchphrase {margin-left: 22px; border-left: 2px solid #000; padding-left: 20px; }
 .catchphrase p { font-size: 16px; font-weight: 700; margin-bottom: 5px; }
 .catchphrase footer { font-size: 13px; color: #777; }
+
+
+
+
+
+
+
 
 /* =================================================== */
 /* ===== 4. 共通コンポーネントのスタイル ===== */
